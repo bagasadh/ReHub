@@ -39,8 +39,7 @@
   margin: 1.5rem 0 2rem;
   padding: 1.25rem 1.5rem;
   background: var(--surface-sunken);
-  border: 1px solid var(--line);
-  border-left: 6px solid var(--signal);
+  border: 1px solid var(--line-strong);
   border-radius: var(--radius-lg);
 }
 .policy-box h2 {
@@ -212,7 +211,7 @@ body:has(#booking-receipt:target) #booking-form {
   margin: 1.25rem 0;
   padding: 1rem 1.25rem;
   background: var(--surface-sunken);
-  border-left: 4px solid var(--signal);
+  border: 1px solid var(--line-strong);
   border-radius: var(--radius);
   color: var(--ink-900);
 }

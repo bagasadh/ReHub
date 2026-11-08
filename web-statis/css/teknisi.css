@@ -187,7 +187,7 @@ details h3 { margin-top: 1rem; }
   color: var(--ink-700);
   font-size: .875rem;
   border-radius: var(--radius);
-  border-left: 3px solid var(--line-strong);
+  border: 1px solid var(--line);
 }
 .sys-note { margin-top: 2rem; }
 

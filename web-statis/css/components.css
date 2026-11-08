@@ -123,7 +123,6 @@
 .notice.warn {
   background: var(--surface-sunken);
   border-color: var(--line-strong);
-  border-left: 6px solid var(--signal);
   color: var(--ink-900);
 }
 .notice-title { font-size: 1.15rem; color: var(--signal); }
