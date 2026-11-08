@@ -163,3 +163,41 @@ main { flex: 1; padding-block: 2rem 3.5rem; }
   .staff-exit { margin-left: 0; }
   .public .section { margin-top: 3rem; }
 }
+
+/* Modul Tata Letak Halaman Kontak (Bebas Inline Style) */
+.contact-detail-grid { margin-top: 1.5rem; }
+.contact-address { margin-top: 1rem; font-style: normal; line-height: 1.6; }
+.workshop-name { font-size: 1.15rem; color: var(--signal); }
+.hours-block { margin-top: 1.5rem; }
+.hours-title { font-size: 1.05rem; margin-bottom: .5rem; color: var(--signal); }
+.mb-0 { margin-bottom: 0; }
+.card-footer-actions { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.contact-channels { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.25rem; }
+.channel-card {
+  padding: 1rem 1.25rem;
+  background: var(--surface-sunken);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+}
+.channel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .35rem; }
+.channel-header strong { font-size: 1.05rem; color: var(--signal); }
+.channel-desc { margin-bottom: .75rem; color: var(--ink-700); font-size: .95rem; }
+.btn-block { width: 100%; text-align: center; }
+
+.booking-banner {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: var(--surface-sunken);
+  border: 1px solid var(--line-strong);
+  border-left: 6px solid var(--signal);
+  border-radius: var(--radius-lg);
+}
+.booking-banner-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+.booking-banner-inner h2 { font-size: 1.3rem; margin: 0 0 .3rem; color: var(--signal); }
+.booking-banner-inner p { margin: 0; color: var(--ink-700); font-size: .95rem; }

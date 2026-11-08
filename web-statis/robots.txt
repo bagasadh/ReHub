@@ -10,3 +10,4 @@ Disallow: /riwayat.html
 Allow: /
 
 Sitemap: sitemap.xml
+

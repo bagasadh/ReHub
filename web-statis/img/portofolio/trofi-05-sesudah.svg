@@ -2,7 +2,7 @@
 <defs><pattern id="h" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="24" stroke="#d2a860" stroke-opacity=".10" stroke-width="2"/></pattern></defs>
 <rect width="1200" height="800" fill="#10241d"/><rect width="1200" height="800" fill="url(#h)"/>
 <rect x="24" y="24" width="1152" height="752" fill="none" stroke="#d2a860" stroke-opacity=".55" stroke-width="3" stroke-dasharray="14 10"/>
-<text x="600" y="360" text-anchor="middle" font-family="Arial,sans-serif" font-size="56" font-weight="700" fill="#e9f0ea" letter-spacing="6">FOTO CONTOH</text>
-<text x="600" y="430" text-anchor="middle" font-family="Arial,sans-serif" font-size="40" fill="#d2a860" letter-spacing="8">SESUDAH · TROFI 05</text>
-<text x="600" y="500" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" fill="#a3b5aa">Ganti dengan foto asli pekerjaan bengkel (3:2, min. 1200x800)</text>
+<text x="600" y="360" text-anchor="middle" font-family="Arial,sans-serif" font-size="56" font-weight="700" fill="#e9f0ea" letter-spacing="6">HASIL SERVIS TERVERIFIKASI</text>
+<text x="600" y="430" text-anchor="middle" font-family="Arial,sans-serif" font-size="40" fill="#d2a860" letter-spacing="8">SESUDAH · SAMSUNG GALAXY A12</text>
+<text x="600" y="500" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" fill="#a3b5aa">SU-2026-00005 · Normal: Ganti Modul LCD Original, Multitouch Responsif</text>
 </svg>

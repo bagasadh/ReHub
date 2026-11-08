@@ -69,8 +69,8 @@
     <input type="radio" name="booking_tab" id="tab-cek" class="sr-only">
 
     <div class="booking-tabs" role="tablist" aria-label="Pilihan layanan booking">
-      <label for="tab-baru" class="booking-tab-btn" id="lbl-tab-baru" role="tab" tabindex="0">Buat Booking Baru</label>
-      <label for="tab-cek" class="booking-tab-btn" id="lbl-tab-cek" role="tab" tabindex="0">Cek Tiket Saya</label>
+      <label for="tab-baru" class="booking-tab-btn" id="lbl-tab-baru" role="tab">Buat Booking Baru</label>
+      <label for="tab-cek" class="booking-tab-btn" id="lbl-tab-cek" role="tab">Cek Tiket Saya</label>
     </div>
 
     <!-- Panel 1: Formulir Booking Baru -->
@@ -130,7 +130,7 @@
         <!-- 3. Jadwal Janji Temu -->
         <fieldset>
           <legend>3. Jadwal Janji Temu di Bengkel</legend>
-          <p class="hint" style="margin-bottom: 1rem;">Bengkel buka Senin–Sabtu, pukul 09.00–18.00 WIB. Lokasi: Depok, Jawa Barat.</p>
+          <p class="hint hint-spaced">Bengkel buka Senin–Sabtu, pukul 09.00–18.00 WIB. Lokasi: Depok, Jawa Barat.</p>
           <div class="grid-2">
             <div class="field">
               <label for="b-tanggal">Tanggal Kedatangan</label>
@@ -157,7 +157,7 @@
           <!-- Ketentuan Toleransi Kedatangan (+1 Jam) -->
           <div class="tolerance-callout" id="preview-toleransi">
             <span>⏱️ <strong>Ketentuan Toleransi Waktu (+1 Jam):</strong> Kami memberikan batas toleransi keterlambatan maksimal <strong>1 jam</strong> dari jam jadwal kedatangan yang Anda pilih.</span>
-            <div style="font-size: .85rem; margin-top: .25rem; color: #a0a0a0;">Contoh: Jika memilih jam 14:00 WIB, batas maksimal tiba di bengkel adalah 15:00 WIB. Lewat toleransi 1 jam tanpa konfirmasi, slot dibatalkan dan DP hangus.</div>
+            <div class="callout-note">Contoh: Jika memilih jam 14:00 WIB, batas maksimal tiba di bengkel adalah 15:00 WIB. Lewat toleransi 1 jam tanpa konfirmasi, slot dibatalkan dan DP hangus.</div>
           </div>
         </fieldset>
 
@@ -213,12 +213,12 @@
             <div class="payment-instructions" id="instruksi-bca">
               <p><strong>Rekening Transfer Resmi Bank BCA:</strong></p>
               <p>Bank BCA: <strong>873-091-2345</strong> a.n. <strong>PT ServisUlang Teknologi</strong></p>
-              <p style="font-size: .85rem; color: #a0a0a0;">Sertakan nomor tiket di berita transfer atau kirim bukti bayar ke WhatsApp admin.</p>
+              <p class="instruction-meta">Sertakan nomor tiket di berita transfer atau kirim bukti bayar ke WhatsApp admin.</p>
             </div>
             <div class="payment-instructions" id="instruksi-mandiri">
               <p><strong>Rekening Transfer Resmi Bank Mandiri:</strong></p>
               <p>Bank Mandiri: <strong>157-00-9876543-2</strong> a.n. <strong>PT ServisUlang Teknologi</strong></p>
-              <p style="font-size: .85rem; color: #a0a0a0;">Sertakan nomor tiket di berita transfer atau kirim bukti bayar ke WhatsApp admin.</p>
+              <p class="instruction-meta">Sertakan nomor tiket di berita transfer atau kirim bukti bayar ke WhatsApp admin.</p>
             </div>
           </div>
         </fieldset>
@@ -246,7 +246,7 @@
       <article class="booking-receipt" id="booking-receipt" aria-live="polite">
         <div class="receipt-header">
           <div>
-            <p class="kicker" style="margin-bottom: .25rem; color: #ffffff;"><img class="icon" src="img/trofi.svg" width="18" height="18" alt=""> Bukti Booking Terkonfirmasi</p>
+            <p class="kicker kicker-highlight"><img class="icon" src="img/trofi.svg" width="18" height="18" alt=""> Bukti Booking Terkonfirmasi</p>
             <h2 class="receipt-title">Tiket Booking Konsumen</h2>
           </div>
           <div>
@@ -257,21 +257,21 @@
         <p class="proto-note">Prototipe statis: bukti tiket siap dicetak atau dikonfirmasi langsung ke WhatsApp bengkel.</p>
 
         <dl class="facts">
-          <div><dt>Nomor Tiket</dt><dd><strong style="font-family: var(--font-mono); color: #ffffff;">SU-2026-BOK01</strong></dd></div>
+          <div><dt>Nomor Tiket</dt><dd><strong class="mono-ticket">SU-2026-BOK01</strong></dd></div>
           <div><dt>Nama Pelanggan</dt><dd id="res-nama">Rian Pratama</dd></div>
           <div><dt>Nomor Kontak / WA</dt><dd id="res-telepon">0812-3456-7890</dd></div>
           <div><dt>Perangkat &amp; Model</dt><dd id="res-perangkat">Laptop · Asus ROG G513</dd></div>
           <div><dt>Keluhan Utama</dt><dd id="res-keluhan">Overheat &amp; mati mendadak saat render video.</dd></div>
-          <div><dt>Jadwal Kedatangan</dt><dd id="res-jadwal" style="font-weight: 700; color: #ffffff;">Hari Ini pukul 14:00 WIB</dd></div>
-          <div><dt>Batas Toleransi Hadir (+1 Jam)</dt><dd id="res-batas-toleransi" style="font-weight: 700; color: #ffffff;">Pukul 15:00 WIB (+1 Jam Toleransi Maksimal)</dd></div>
-          <div><dt>Uang Muka (DP)</dt><dd id="res-dp" style="font-weight: 700; color: #ffffff;">Rp 50.000 (Terkonfirmasi)</dd></div>
+          <div><dt>Jadwal Kedatangan</dt><dd id="res-jadwal" class="fact-bold">Hari Ini pukul 14:00 WIB</dd></div>
+          <div><dt>Batas Toleransi Hadir (+1 Jam)</dt><dd id="res-batas-toleransi" class="fact-bold">Pukul 15:00 WIB (+1 Jam Toleransi Maksimal)</dd></div>
+          <div><dt>Uang Muka (DP)</dt><dd id="res-dp" class="fact-bold">Rp 50.000 (Terkonfirmasi)</dd></div>
           <div><dt>Metode Bayar</dt><dd id="res-metode">QRIS</dd></div>
           <div><dt>Status Tiket</dt><dd><span class="badge diagnosis">Booking / Menunggu Kedatangan</span></dd></div>
         </dl>
 
         <div class="receipt-warning">
           <strong>Peringatan Kebijakan Waktu:</strong>
-          <p style="margin: .35rem 0 0; font-size: .95rem;">
+          <p class="receipt-note">
             Harap tiba di bengkel sebelum pukul <strong>15:00 WIB</strong> (batas toleransi +1 jam). Jika tidak hadir melewati batas toleransi tersebut tanpa konfirmasi, tiket hangus dan DP tidak dapat dikembalikan.
           </p>
         </div>
@@ -286,11 +286,11 @@
 
     <!-- Panel 2: Cek Riwayat Tiket Konsumen -->
     <div id="panel-cek" class="booking-panel" role="tabpanel" aria-labelledby="lbl-tab-cek">
-      <section class="card" style="margin-top: 1rem;">
+      <section class="card section-card">
         <h2>Cek Status Tiket Anda</h2>
         <p class="muted">Masukkan nomor tiket booking (contoh: SU-2026-BOK01) atau nomor WhatsApp yang Anda gunakan saat booking.</p>
         
-        <form class="filters" action="booking.html" method="get" role="search" style="margin-top: 1rem; padding: 0; background: transparent; border: none;">
+        <form class="filters filters-seamless" action="booking.html" method="get" role="search">
           <div class="field grow">
             <label for="cek-input">Nomor Tiket atau Nomor WhatsApp</label>
             <input id="cek-input" name="cek_q" type="text" placeholder="SU-2026-BOK... atau 0812...">
@@ -298,17 +298,17 @@
           <button class="btn btn-solid" type="submit" id="btn-cari-tiket">Cari Tiket</button>
         </form>
 
-        <div id="hasil-cek-wrapper" style="margin-top: 1.5rem;">
+        <div id="hasil-cek-wrapper" class="search-results-wrap">
           <p class="proto-note">Prototipe statis: Contoh data tiket booking yang tersimpan.</p>
           <div id="daftar-tiket-tersimpan">
-            <article class="card" style="margin-top: 1rem; border-color: #383838; background: #242424;">
-              <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .5rem; margin-bottom: .75rem;">
-                <strong style="font-family: var(--font-mono); font-size: 1.15rem; color: #ffffff;">SU-2026-BOK01</strong>
+            <article class="card card-ticket-item">
+              <div class="ticket-item-header">
+                <strong class="mono-ticket-lg">SU-2026-BOK01</strong>
                 <span class="badge diagnosis">Booking / Menunggu Kedatangan</span>
               </div>
               <p><strong>Rian Pratama</strong> · Laptop Asus ROG G513</p>
-              <p class="muted" style="margin-bottom: .5rem;">Overheat &amp; mati mendadak saat render video. Janji temu di bengkel.</p>
-              <div class="notice" style="background: #181818; padding: .75rem 1rem; border-color: #383838;">
+              <p class="muted ticket-item-desc">Overheat &amp; mati mendadak saat render video. Janji temu di bengkel.</p>
+              <div class="notice ticket-item-notice">
                 <div>🕒 <strong>Jadwal:</strong> Hari Ini pukul 14:00 WIB</div>
                 <div>⏱️ <strong>Toleransi Maksimal:</strong> pukul 15:00 WIB (setelah ini DP hangus)</div>
                 <div>💰 <strong>DP:</strong> Rp 50.000 via QRIS (Terverifikasi)</div>

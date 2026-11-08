@@ -276,3 +276,20 @@ body:has(#booking-receipt:target) #booking-form {
 .field-checkbox input:user-invalid ~ .field-error {
   display: block;
 }
+
+/* Utilitas & Kelas Semantik Booking (Bebas Inline Style) */
+.hint-spaced { margin-bottom: 1rem; }
+.callout-note { font-size: .85rem; margin-top: .25rem; color: var(--ink-500); }
+.instruction-meta { font-size: .85rem; color: var(--ink-500); }
+.kicker-highlight { margin-bottom: .25rem; color: var(--signal); }
+.mono-ticket { font-family: var(--font-mono); color: var(--signal); }
+.mono-ticket-lg { font-family: var(--font-mono); font-size: 1.15rem; color: var(--signal); }
+.fact-bold { font-weight: 700; color: var(--signal); }
+.receipt-note { margin: .35rem 0 0; font-size: .95rem; }
+.section-card { margin-top: 1rem; }
+.filters-seamless { margin-top: 1rem; padding: 0; background: transparent; border: none; }
+.search-results-wrap { margin-top: 1.5rem; }
+.card-ticket-item { margin-top: 1rem; border-color: var(--line); background: var(--surface); }
+.ticket-item-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .5rem; margin-bottom: .75rem; }
+.ticket-item-desc { margin-bottom: .5rem; }
+.ticket-item-notice { background: var(--surface-sunken); padding: .75rem 1rem; border-color: var(--line); }

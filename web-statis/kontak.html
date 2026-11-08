@@ -46,20 +46,20 @@
     </header>
 
     <!-- Grid Kontak & Detail Lokasi -->
-    <div class="two-col" style="margin-top: 1.5rem;">
+    <div class="two-col contact-detail-grid">
       <!-- Kolom 1: Informasi Bengkel & Jam Buka -->
       <section class="card" aria-labelledby="h-lokasi">
         <h2 id="h-lokasi">Alamat &amp; Akses Bengkel</h2>
-        <address style="margin-top: 1rem;">
-          <strong style="font-size: 1.15rem; color: #ffffff;">ServisUlang AI Workshop</strong><br>
+        <address class="contact-address">
+          <strong class="workshop-name">ServisUlang AI Workshop</strong><br>
           Jl. Margonda Raya No. 123, Kemiri Muka, Kecamatan Beji,<br>
           Kota Depok, Jawa Barat 16423<br>
           <span class="muted">📍 Patokan: 200 meter dari Stasiun KRL Pondok Cina, persis seberang SPBU Pertamina.</span>
         </address>
 
-        <div style="margin-top: 1.5rem;">
-          <h3 style="font-size: 1.05rem; margin-bottom: .5rem;">Jam Operasional Workshop</h3>
-          <dl class="facts" style="margin-bottom: 0;">
+        <div class="hours-block">
+          <h3 class="hours-title">Jam Operasional Workshop</h3>
+          <dl class="facts mb-0">
             <div>
               <dt>Senin – Jumat</dt>
               <dd>09.00 – 18.00 WIB</dd>
@@ -75,7 +75,7 @@
           </dl>
         </div>
 
-        <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line);">
+        <div class="card-footer-actions">
           <p class="actions">
             <a class="btn btn-solid" href="https://maps.google.com/?q=Stasiun+Pondok+Cina+Depok" target="_blank" rel="noopener noreferrer">Buka di Google Maps ↗</a>
             <a class="btn btn-outline" href="booking.html">Booking Slot Servis</a>
@@ -88,31 +88,31 @@
         <h2 id="h-saluran">Hubungi Teknisi Kami</h2>
         <p class="muted">Kami menyarankan untuk konsultasi terlebih dahulu sebelum mengantar perangkat agar teknisi dapat menyiapkan suku cadang yang relevan.</p>
 
-        <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.25rem;">
+        <div class="contact-channels">
           <!-- Kartu WhatsApp -->
-          <div class="notice" style="background: #181818; border-color: var(--line-strong);">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: .35rem;">
-              <strong style="font-size: 1.05rem; color: #ffffff;">WhatsApp Konsultasi</strong>
+          <div class="channel-card">
+            <div class="channel-header">
+              <strong>WhatsApp Konsultasi</strong>
               <span class="badge completed">Online Cepat</span>
             </div>
-            <p style="margin-bottom: .75rem; color: var(--ink-700); font-size: .95rem;">
+            <p class="channel-desc">
               Kirim foto fisik perangkat, video gejala kerusakan, atau konsultasikan estimasi biaya awal.
             </p>
-            <a class="btn btn-solid" style="width: 100%; text-align: center;" href="https://wa.me/6281234567890?text=Halo%20Admin%20ServisUlang%20AI%2C%20saya%20ingin%20konsultasi%20mengenai%20servis%20perangkat." target="_blank" rel="noopener noreferrer">
+            <a class="btn btn-solid btn-block" href="https://wa.me/6281234567890?text=Halo%20Admin%20ServisUlang%20AI%2C%20saya%20ingin%20konsultasi%20mengenai%20servis%20perangkat." target="_blank" rel="noopener noreferrer">
               Chat WhatsApp (0812-3456-7890)
             </a>
           </div>
 
           <!-- Kartu Instagram & Media Sosial -->
-          <div class="notice" style="background: #181818; border-color: var(--line-strong);">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: .35rem;">
-              <strong style="font-size: 1.05rem; color: #ffffff;">Instagram Resmi</strong>
+          <div class="channel-card">
+            <div class="channel-header">
+              <strong>Instagram Resmi</strong>
               <span class="badge diagnosis">Dokumentasi</span>
             </div>
-            <p style="margin-bottom: .75rem; color: var(--ink-700); font-size: .95rem;">
+            <p class="channel-desc">
               Lihat update harian kasus servis teknisi, tips perawatan perangkat, dan info garansi di <strong>@servisulang.ai</strong>.
             </p>
-            <a class="btn btn-outline" style="width: 100%; text-align: center;" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+            <a class="btn btn-outline btn-block" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
               Kunjungi Instagram @servisulang.ai
             </a>
           </div>
@@ -121,11 +121,11 @@
     </div>
 
     <!-- Banner Aksi Booking Mandiri -->
-    <section class="notice" style="margin-top: 3rem; background: #1a1a1a; border: 1px solid #444444; border-left: 6px solid #ffffff;">
-      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
+    <section class="booking-banner">
+      <div class="booking-banner-inner">
         <div>
-          <h2 style="font-size: 1.3rem; margin: 0 0 .3rem; color: #ffffff;">Ingin Langsung Mengamankan Antrean Teknisi?</h2>
-          <p style="margin: 0; color: var(--ink-700); font-size: .95rem;">
+          <h2>Ingin Langsung Mengamankan Antrean Teknisi?</h2>
+          <p>
             Gunakan fitur booking mandiri untuk reservasi jam ketemuan, jaminan slot teknisi dengan DP minimal Rp50.000.
           </p>
         </div>
