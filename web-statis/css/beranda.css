@@ -6,8 +6,8 @@
    Tiga slide berjejer ke samping. Link prev/next (#t1, #t2, #t3)
    menggeser slide tanpa JavaScript berkat scroll-snap. */
 .trofi-hero {
-  background: #171717;
-  color: #fff;
+  background: var(--surface-sunken);
+  color: var(--signal);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -45,7 +45,7 @@
   font-size: clamp(8rem, 20vw, 17rem);
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 2px #333333;
+  -webkit-text-stroke: 2px var(--line);
   pointer-events: none;
   user-select: none;
 }
@@ -55,22 +55,22 @@
 .slide-photo img {
   width: 100%;
   border-radius: var(--radius);
-  border: 1px solid #4a4a4a;
-  box-shadow: 10px 10px 0 #383838;
+  border: 1px solid var(--line-strong);
+  box-shadow: 10px 10px 0 var(--line);
 }
 .slide-body { grid-area: body; align-self: center; }
 
-.slide .kicker { color: #cccccc; }
+.slide .kicker { color: var(--ink-700); }
 .slide h3 { font-size: clamp(1.7rem, 3.4vw, 2.7rem); margin-bottom: 1rem; }
-.slide .facts > div { border-top-color: #333333; }
-.slide .facts dt { color: #a0a0a0; }
-.slide .facts dd { color: #ffffff; }
+.slide .facts > div { border-top-color: var(--line); }
+.slide .facts dt { color: var(--ink-500); }
+.slide .facts dd { color: var(--signal); }
 .slide .actions { margin-top: 1.25rem; }
-.trofi-hero .btn-outline { color: #fff; border-color: #fff; }
-.trofi-hero .btn-outline:hover { background: #fff; color: #202020; }
-.trofi-hero .btn-link { color: #fff; }
-.trofi-hero .btn-link:hover { background: #333333; }
-.trofi-hero :focus-visible { outline-color: #fff; }
+.trofi-hero .btn-outline { color: var(--signal); border-color: var(--signal); }
+.trofi-hero .btn-outline:hover { background: var(--signal); color: var(--paper); }
+.trofi-hero .btn-link { color: var(--signal); }
+.trofi-hero .btn-link:hover { background: var(--line); }
+.trofi-hero :focus-visible { outline-color: var(--signal); }
 
 .slide-nav {
   grid-area: nav;
@@ -78,10 +78,10 @@
   justify-content: space-between;
   gap: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid #333333;
+  border-top: 1px solid var(--line);
 }
 .slide-nav a {
-  color: #fff;
+  color: var(--signal);
   font-weight: 600;
   text-decoration: none;
   padding: .35rem .25rem;
@@ -97,7 +97,7 @@
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "photo" "body" "nav";
   }
-  .slide-photo img { box-shadow: 6px 6px 0 #383838; }
+  .slide-photo img { box-shadow: 6px 6px 0 var(--line); }
   .ghost { font-size: 8rem; right: .5rem; }
 
   .facts > div { grid-template-columns: 1fr; gap: 0; }

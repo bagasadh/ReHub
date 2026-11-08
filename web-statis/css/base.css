@@ -64,6 +64,7 @@
   --link: #f0f0f0;           /* tautan */
   --link-hover: #ffffff;
   --warn-line: #888888;      /* penanda garis peringatan monokrom */
+  --error: #f87171;          /* status error validasi */
 
   --font-head: var(--font-body);
   --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -98,7 +99,7 @@ h1, h2, h3 {
   line-height: 1.2;
   font-weight: 600;
   margin: 0 0 .5rem;
-  color: #ffffff;
+  color: var(--signal);
 }
 h1 { font-size: clamp(1.875rem, 1.4rem + 2vw, 2.75rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; }
 h2 { font-size: clamp(1.375rem, 1.1rem + 1vw, 1.75rem); letter-spacing: -0.01em; }
@@ -114,7 +115,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Fokus keyboard harus selalu kelihatan jelas */
 :focus-visible {
-  outline: 3px solid #ffffff;
+  outline: 3px solid var(--signal);
   outline-offset: 2px;
 }
 
@@ -139,8 +140,8 @@ img { max-width: 100%; height: auto; display: block; }
   position: absolute;
   left: 1rem; top: -4rem;
   z-index: 10;
-  background: #ffffff;
-  color: #202020;
+  background: var(--signal);
+  color: var(--paper);
   padding: .6rem 1rem;
   font-weight: 600;
 }

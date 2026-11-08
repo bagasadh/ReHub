@@ -22,12 +22,12 @@ main { flex: 1; padding-block: 2rem 3.5rem; }
   display: inline-flex;
   align-items: center;
   gap: .65rem;
-  color: #ffffff;
+  color: var(--signal);
   font-size: 1.25rem;
   font-weight: 700;
   text-decoration: none;
 }
-.brand:hover { color: #ffffff; }
+.brand:hover { color: var(--signal); }
 
 .brand-logo, .brand-mark {
   width: 38px;
@@ -38,11 +38,17 @@ main { flex: 1; padding-block: 2rem 3.5rem; }
   vertical-align: middle;
   flex-shrink: 0;
 }
+.brand-name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .3rem;
+  letter-spacing: -0.01em;
+}
 .brand-ai { font-weight: 500; color: var(--ink-500); }
 
 /* Header publik (monokrom gelap) */
 .site-header {
-  background: #1a1a1a;
+  background: var(--surface-sunken);
   border-bottom: 1px solid var(--line);
 }
 .site-header-inner {
@@ -70,21 +76,21 @@ main { flex: 1; padding-block: 2rem 3.5rem; }
   transition: background-color .15s, color .15s;
 }
 .site-header nav a:hover {
-  background: #2e2e2e;
-  color: #ffffff;
+  background: var(--surface);
+  color: var(--signal);
 }
 .site-header nav a[aria-current="page"] {
   font-weight: 600;
-  color: #ffffff;
+  color: var(--signal);
   border-radius: 0;
-  box-shadow: inset 0 -3px 0 #ffffff;
+  box-shadow: inset 0 -3px 0 var(--signal);
 }
 
 /* Bar Area teknisi (hitam pekat sunken): penanda area kerja internal */
 .staff-bar {
-  background: #141414;
-  border-bottom: 1px solid #333333;
-  color: #fff;
+  background: var(--surface-sunken);
+  border-bottom: 1px solid var(--line);
+  color: var(--signal);
 }
 .staff-bar-inner {
   display: flex;
@@ -93,43 +99,43 @@ main { flex: 1; padding-block: 2rem 3.5rem; }
   gap: .25rem 1.5rem;
   padding-block: .55rem;
 }
-.staff-bar .brand { color: #fff; font-size: 1.05rem; }
+.staff-bar .brand { color: var(--signal); font-size: 1.05rem; }
 .staff-bar .brand-logo, .staff-bar .brand-mark { width: 34px; height: 34px; }
-.staff-bar a:hover { color: #fff; }
+.staff-bar a:hover { color: var(--signal); }
 .staff-bar nav a {
   display: block;
   padding: .6rem .8rem;
-  color: #cccccc;
+  color: var(--ink-700);
   font-weight: 500;
   text-decoration: none;
   border-radius: var(--radius);
   transition: background-color .15s, color .15s;
 }
 .staff-bar nav a:hover {
-  background: #282828;
-  color: #ffffff;
+  background: var(--surface);
+  color: var(--signal);
 }
 .staff-bar nav a[aria-current="page"] {
   font-weight: 600;
-  color: #ffffff;
+  color: var(--signal);
   border-radius: 0;
-  box-shadow: inset 0 -3px 0 #ffffff;
+  box-shadow: inset 0 -3px 0 var(--signal);
 }
 .staff-exit {
   margin-left: auto;
   padding: .6rem .25rem;
-  color: #a0a0a0;
+  color: var(--ink-500);
   text-decoration: none;
 }
 .staff-exit:hover {
-  color: #ffffff;
+  color: var(--signal);
   text-decoration: underline;
 }
-.staff-bar :focus-visible { outline-color: #fff; }
+.staff-bar :focus-visible { outline-color: var(--signal); }
 
 .foot {
   border-top: 1px solid var(--line);
-  background: #181818;
+  background: var(--surface-sunken);
   color: var(--ink-500);
   font-size: .875rem;
 }
@@ -143,7 +149,7 @@ main { flex: 1; padding-block: 2rem 3.5rem; }
 .foot p { margin: 0; align-self: center; }
 .foot-links { display: flex; flex-wrap: wrap; gap: 0 1.25rem; list-style: none; margin: 0; padding: 0; }
 .foot-links a { display: inline-block; padding: .55rem 0; color: var(--ink-700); }
-.foot-links a:hover { color: #ffffff; }
+.foot-links a:hover { color: var(--signal); }
 
 
 

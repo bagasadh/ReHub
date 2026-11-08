@@ -25,9 +25,9 @@
   color: var(--paper);
 }
 .btn-solid:hover {
-  background: #d4d4d4;
-  border-color: #d4d4d4;
-  color: #111111;
+  background: var(--ink-700);
+  border-color: var(--ink-700);
+  color: var(--surface-sunken);
 }
 .btn-outline {
   border-color: var(--signal);
@@ -45,7 +45,7 @@
   padding-inline: .4rem;
 }
 .btn-link:hover {
-  background: #333333;
+  background: var(--line);
   color: var(--signal);
 }
 
@@ -121,9 +121,9 @@
 }
 .notice > :last-child { margin-bottom: 0; }
 .notice.warn {
-  background: #2b2820;
+  background: var(--surface-sunken);
   border-color: var(--line-strong);
-  border-left: 6px solid #ffffff;
+  border-left: 6px solid var(--signal);
   color: var(--ink-900);
 }
 .notice-title { font-size: 1.15rem; color: var(--signal); }
@@ -177,7 +177,7 @@ address {
 .steps li {
   counter-increment: langkah;
   padding-top: .9rem;
-  border-top: 4px solid #ffffff;
+  border-top: 4px solid var(--signal);
 }
 .steps li::before {
   content: counter(langkah);
@@ -229,7 +229,7 @@ input, select, textarea {
 }
 textarea { resize: vertical; }
 input:focus-visible, select:focus-visible, textarea:focus-visible {
-  outline: 3px solid #ffffff;
+  outline: 3px solid var(--signal);
   outline-offset: 0;
   border-color: var(--signal);
 }
@@ -257,12 +257,12 @@ td time { white-space: nowrap; }
 
 /* Tombol nonaktif */
 .btn:disabled {
-  background: #2a2a2a;
+  background: var(--surface);
   border: 2px dashed var(--line-strong);
-  color: #777777;
+  color: var(--ink-500);
   cursor: not-allowed;
 }
-.btn:disabled:hover { background: #2a2a2a; color: #777777; }
+.btn:disabled:hover { background: var(--surface); color: var(--ink-500); }
 
 
 
@@ -279,9 +279,9 @@ a[href="tiket-detail.html"] { font-family: var(--font-mono); font-size: .95em; }
 
 /* Form validasi */
 .form-note { margin: 0 0 1rem; color: var(--ink-500); }
-.field-error { display: none; margin: .3rem 0 0; color: #f87171; font-size: .875rem; font-weight: 600; }
+.field-error { display: none; margin: .3rem 0 0; color: var(--error); font-size: .875rem; font-weight: 600; }
 .field :is(input, select, textarea):user-invalid {
-  border-color: #f87171;
+  border-color: var(--error);
   border-width: 2px;
 }
 .field :is(input, select, textarea):user-invalid ~ .field-error { display: block; }
