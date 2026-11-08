@@ -1,0 +1,297 @@
+/* ==========================================================================
+   3. COMPONENTS (Tombol, Badge, Notifikasi, Kartu, Form Input)
+   ========================================================================== */
+
+/* 5. TOMBOL & KOMPONEN KECIL --------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: .55rem 1.1rem;
+  border: 2px solid #ffffff;
+  border-radius: var(--radius);
+  background: transparent;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .15s, color .15s, border-color .15s;
+}
+.btn-solid {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #202020;
+}
+.btn-solid:hover {
+  background: #d4d4d4;
+  border-color: #d4d4d4;
+  color: #111111;
+}
+.btn-outline {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.btn-outline:hover {
+  background: #ffffff;
+  color: #202020;
+}
+.btn-link {
+  border-color: transparent;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+  padding-inline: .4rem;
+}
+.btn-link:hover {
+  background: #333333;
+  color: #ffffff;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem .75rem;
+  margin: 0;
+}
+
+/* Judul kecil di atas halaman/trofi + ikon */
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin: 0 0 .5rem;
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--ink-500);
+}
+.icon { width: 20px; height: 20px; flex: none; color: currentColor; }
+
+.tag {
+  display: inline-block;
+  padding: .15rem .6rem;
+  background: #ffffff;
+  color: #202020;
+  font-family: var(--font-body);
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  border-radius: var(--radius);
+  vertical-align: middle;
+}
+
+.section { margin-top: 2.25rem; }
+.public .section { margin-top: 4rem; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+/* Daftar fakta: "label — isi" */
+.facts { margin: 0 0 1rem; }
+.facts > div {
+  display: grid;
+  grid-template-columns: 11.5rem minmax(0, 1fr);
+  gap: .25rem 1rem;
+  padding: .6rem 0;
+  border-top: 1px solid var(--line);
+}
+.facts dt { color: var(--ink-500); font-size: .9rem; }
+.facts dd { margin: 0; color: var(--ink-900); }
+
+/* Versi kolom: label di atas isi, beberapa kolom berdampingan */
+.facts.cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(13rem, 100%), 1fr));
+  gap: 0 1.5rem;
+}
+.facts.cols > div { grid-template-columns: 1fr; }
+
+.notice {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  color: var(--ink-900);
+}
+.notice > :last-child { margin-bottom: 0; }
+.notice.warn {
+  background: #2b2820;
+  border-color: #555555;
+  border-left: 6px solid #ffffff;
+  color: #f5f5f5;
+}
+.notice-title { font-size: 1.15rem; color: #ffffff; }
+.notice-line { color: var(--ink-500); }
+
+.page-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: .5rem 1.5rem;
+}
+.page-head > * { margin-bottom: 0; }
+.page-head h1 { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; }
+.page-head .lead, .page-head .chips, .page-head .kicker { flex-basis: 100%; }
+.page-head .lead { margin-top: .5rem; }
+.page-head .chips { margin-top: 1rem; }
+
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chips a {
+  padding: .35rem .9rem;
+  border: 1px solid #555555;
+  border-radius: var(--radius);
+  color: var(--ink-900);
+  background: #242424;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color .15s, color .15s, border-color .15s;
+}
+.chips a:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #202020;
+}
+
+address {
+  font-style: normal;
+  line-height: 1.9;
+}
+
+/* Langkah "Kenapa hasilnya bisa dicek": urutan dengan nomor */
+.steps {
+  list-style: none;
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+  gap: var(--gap);
+  counter-reset: langkah;
+}
+.steps li {
+  counter-increment: langkah;
+  padding-top: .9rem;
+  border-top: 4px solid #ffffff;
+}
+.steps li::before {
+  content: counter(langkah);
+  display: inline-grid;
+  place-items: center;
+  width: 1.9rem; height: 1.9rem;
+  margin-bottom: .5rem;
+  background: #ffffff;
+  color: #202020;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  border-radius: var(--radius);
+}
+.steps p { margin: 0; color: var(--ink-500); }
+
+
+
+/* 9. FORMULIR ------------------------------------------------------------ */
+.form { margin-top: 1.5rem; max-width: 52rem; }
+fieldset {
+  margin: 0 0 var(--gap);
+  padding: 1rem 1.25rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+legend {
+  padding: 0 .5rem;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.field { margin-bottom: 1rem; }
+label { display: block; margin-bottom: .3rem; font-weight: 600; font-size: .95rem; color: #ffffff; }
+.opt { color: var(--ink-500); font-weight: 400; }
+.hint { margin: .3rem 0 0; color: var(--ink-500); font-size: .875rem; }
+
+input, select, textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: .55rem .7rem;
+  background: #181818;
+  color: #ffffff;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  font: inherit;
+}
+textarea { resize: vertical; }
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 0;
+  border-color: #ffffff;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: .75rem 1rem;
+  margin: 1.5rem 0 0;
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+.filters .field { margin-bottom: 0; }
+.filters .grow { flex: 1 1 16rem; }
+.filters .field:not(.grow) { flex: 0 1 14rem; }
+.inline-form .field { margin-bottom: 0; flex: 0 1 16rem; }
+
+
+
+/* Tanggal di tabel jangan terpotong */
+td time { white-space: nowrap; }
+
+/* Tombol nonaktif */
+.btn:disabled {
+  background: #2a2a2a;
+  border: 2px dashed #555555;
+  color: #777777;
+  cursor: not-allowed;
+}
+.btn:disabled:hover { background: #2a2a2a; color: #777777; }
+
+
+
+/* Panjang baris paragraf maksimal 66 karakter supaya enak dibaca */
+main :where(p) { max-width: 66ch; }
+.kicker { max-width: none; }
+
+/* Angka rata lebar di tabel dan statistik */
+table, .stats strong, .status-row strong { font-variant-numeric: tabular-nums; }
+
+/* Nomor tiket selalu font mono */
+a[href="tiket-detail.html"] { font-family: var(--font-mono); font-size: .95em; }
+
+
+/* Form validasi */
+.form-note { margin: 0 0 1rem; color: var(--ink-500); }
+.field-error { display: none; margin: .3rem 0 0; color: #f87171; font-size: .875rem; font-weight: 600; }
+.field :is(input, select, textarea):user-invalid {
+  border-color: #f87171;
+  border-width: 2px;
+}
+.field :is(input, select, textarea):user-invalid ~ .field-error { display: block; }
+
+
+/* Perbaikan input checkbox dan radio */
+input[type="checkbox"], input[type="radio"] {
+  width: auto;
+  min-height: auto;
+  accent-color: #ffffff;
+  cursor: pointer;
+  margin: 0;
+}

@@ -1,0 +1,43 @@
+/* ==========================================================================
+   5. PORTOFOLIO (Dinding Trofi & Foto Sebelum/Sesudah)
+   ========================================================================== */
+
+/* 10. PORTOFOLIO --------------------------------------------------------- */
+.trofi {
+  position: relative;
+  margin-top: 1.5rem;
+  padding: clamp(1rem, 2.5vw, 1.75rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.trofi .ghost {
+  -webkit-text-stroke-color: #383838;
+  font-size: clamp(6rem, 14vw, 11rem);
+  top: .25rem;
+}
+.trofi-photos, .trofi-body { position: relative; z-index: 1; }
+
+.trofi-photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap);
+  margin-bottom: 1.25rem;
+}
+.trofi-photos img {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--line-strong);
+}
+.trofi-photos figcaption {
+  margin-top: .4rem;
+  font-weight: 600;
+  font-size: .9rem;
+  color: var(--ink-500);
+}
+/* Foto "sesudah" diberi bingkai putih tebal */
+.trofi-photos figure:last-child img { border: 3px solid #ffffff; }
+
+.trofi-body h3 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); }
+.meta { color: var(--ink-500); font-size: .9rem; font-family: var(--font-body); }

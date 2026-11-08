@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riwayat servis — ServisUlang AI</title>
+  <meta name="description" content="Riwayat tiket servis untuk satu perangkat.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <meta name="theme-color" content="#202020">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="staff">
+  <a class="skip" href="#utama">Lewati ke konten utama</a>
+  <header class="staff-bar">
+    <div class="wrap staff-bar-inner">
+      <a class="brand" href="dashboard.html"><img class="brand-logo" src="img/logo.png" alt="" width="38" height="38"> <span class="brand-name">Area teknisi</span></a>
+      <nav aria-label="Navigasi area teknisi">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="tiket.html">Tiket</a></li>
+          <li><a href="riwayat.html" aria-current="page">Riwayat</a></li>
+        </ul>
+      </nav>
+      <a class="staff-exit" href="index.html">← Situs publik</a>
+    </div>
+  </header>
+
+      <main id="utama" class="wrap">
+        <header class="page-head">
+          <h1>Riwayat servis</h1>
+          <p class="lead">Semua tiket untuk satu perangkat, urut dari yang terbaru.</p>
+        </header>
+        <p class="proto-note">Prototipe statis: data di halaman ini adalah contoh, dan tombol simpan belum menyimpan apa pun.</p>
+
+        <section class="section card" aria-labelledby="h-dev">
+          <h2 id="h-dev">Laptop Lenovo IdeaPad 3</h2>
+          <dl class="facts cols">
+            <div><dt>Pemilik</dt><dd>Budi Santoso</dd></div>
+            <div><dt>Kategori</dt><dd>Laptop</dd></div>
+            <div><dt>Nomor seri</dt><dd>LNV-DEMO-001</dd></div>
+            <div><dt>Jumlah tiket</dt><dd>2</dd></div>
+          </dl>
+        </section>
+
+        <section class="section" aria-labelledby="h-linimasa">
+          <h2 id="h-linimasa">Linimasa</h2>
+          <ol class="timeline">
+            <li>
+              <p class="when"><time datetime="2026-10-17">17 Okt 2026</time> · <span class="badge diagnosis">Diagnosis</span></p>
+              <h3><a href="tiket-detail.html">SU-2026-00008</a></h3>
+              <p>Laptop hidup tapi layar hitam lagi, kipas berputar.</p>
+              <p class="small muted">Ditandai kemungkinan kasus berulang terhadap SU-2026-00001. Belum ada temuan terkonfirmasi.</p>
+            </li>
+            <li>
+              <p class="when"><time datetime="2026-08-23">23 Agu 2026</time> · <span class="badge returned">Sudah diambil</span></p>
+              <h3><a href="tiket-detail.html">SU-2026-00001</a></h3>
+              <p>Laptop hidup, kipas menyala, tetapi layarnya hitam. Sudah dicoba restart beberapa kali.</p>
+              <dl class="facts">
+                <div><dt>Temuan terkonfirmasi</dt><dd>Modul RAM tidak terpasang dengan sempurna</dd></div>
+                <div><dt>Tindakan</dt><dd>Pasang ulang RAM, bersihkan kontak, uji ulang</dd></div>
+                <div><dt>Hasil uji akhir</dt><dd>Tampil normal, lolos uji booting dan uji RAM 15 menit</dd></div>
+                <div><dt>Biaya disetujui</dt><dd>Rp 75.000</dd></div>
+                <div><dt>Garansi servis</dt><dd>Sampai 24 Okt 2026</dd></div>
+              </dl>
+            </li>
+          </ol>
+        </section>
+      </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <p>© 2026 ServisUlang AI · Proyek mata kuliah Pemrograman Web, Universitas Gunadarma</p>
+      <ul class="foot-links">
+        <li><a href="index.html">Situs publik</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

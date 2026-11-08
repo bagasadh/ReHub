@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daftar tiket — ServisUlang AI</title>
+  <meta name="description" content="Semua tiket servis dengan pencarian dan filter status.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <meta name="theme-color" content="#202020">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="staff">
+  <a class="skip" href="#utama">Lewati ke konten utama</a>
+  <header class="staff-bar">
+    <div class="wrap staff-bar-inner">
+      <a class="brand" href="dashboard.html"><img class="brand-logo" src="img/logo.png" alt="" width="38" height="38"> <span class="brand-name">Area teknisi</span></a>
+      <nav aria-label="Navigasi area teknisi">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="tiket.html" aria-current="page">Tiket</a></li>
+          <li><a href="riwayat.html">Riwayat</a></li>
+        </ul>
+      </nav>
+      <a class="staff-exit" href="index.html">← Situs publik</a>
+    </div>
+  </header>
+
+      <main id="utama" class="wrap">
+        <header class="page-head">
+          <h1>Tiket servis</h1>
+          <p class="actions"><a class="btn btn-solid" href="tiket-baru.html">+ Tiket baru</a></p>
+        </header>
+        <p class="proto-note">Prototipe statis: data di halaman ini adalah contoh, dan tombol simpan belum menyimpan apa pun.</p>
+
+        <form class="filters" action="tiket.html" method="get" role="search">
+          <div class="field grow">
+            <label for="q">Cari (no. tiket, pelanggan, merek, model, keluhan)</label>
+            <input id="q" name="q" type="search">
+          </div>
+          <div class="field">
+            <label for="status">Status</label>
+            <select id="status" name="status">
+              <option value="">Semua</option>
+              <option value="received">Diterima</option>
+              <option value="diagnosis">Diagnosis</option>
+              <option value="waiting">Menunggu persetujuan</option>
+              <option value="repair">Dikerjakan</option>
+              <option value="testing">Diuji</option>
+              <option value="completed">Selesai</option>
+              <option value="returned">Sudah diambil</option>
+            </select>
+          </div>
+          <button class="btn btn-outline" type="submit">Terapkan</button>
+        </form>
+
+        <section class="section" aria-label="Daftar tiket">
+          <div class="table-wrap">
+            <table>
+              <caption class="sr-only">Seluruh tiket servis, terbaru di atas</caption>
+            <thead>
+              <tr><th scope="col">Tiket</th><th scope="col">Perangkat</th><th scope="col">Pelanggan</th><th scope="col">Keluhan</th><th scope="col">Status</th><th scope="col">Masuk</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="tiket-detail.html">SU-2026-BOK01</a></td>
+                <td>Laptop Asus ROG G513</td>
+                <td>Rian Pratama</td>
+                <td>Overheat &amp; mati mendadak. Booking jam 14:00 WIB (Batas toleransi 15:00, DP Rp50.000).</td>
+                <td><span class="badge diagnosis">Booking Online</span></td>
+                <td><time datetime="2026-11-03">Hari ini</time></td>
+              </tr>
+              <tr>
+                <td><a href="tiket-detail.html">SU-2026-00009</a></td>
+                <td>Laptop Asus VivoBook 14</td>
+                <td>Siti Rahma</td>
+                <td>Beberapa tombol keyboard tidak berfungsi.</td>
+                <td><span class="badge received">Diterima</span></td>
+                <td><time datetime="2026-10-20">20 Okt 2026</time></td>
+              </tr>
+              <tr>
+                <td><a href="tiket-detail.html">SU-2026-00008</a></td>
+                <td>Laptop Lenovo IdeaPad 3</td>
+                <td>Budi Santoso</td>
+                <td>Laptop hidup tapi layar hitam lagi, kipas berputar.</td>
+                <td><span class="badge diagnosis">Diagnosis</span></td>
+                <td><time datetime="2026-10-17">17 Okt 2026</time></td>
+              </tr>
+              <tr>
+                <td><a href="tiket-detail.html">SU-2026-00007</a></td>
+                <td>Laptop Lenovo ThinkPad E14</td>
+                <td>CV Maju Jaya</td>
+                <td>Layar hitam saat dinyalakan, lampu indikator menyala.</td>
+                <td><span class="badge received">Diterima</span></td>
+                <td><time datetime="2026-10-12">12 Okt 2026</time></td>
+              </tr>
+              <tr>
+                <td><a href="tiket-detail.html">SU-2026-00006</a></td>
+                <td>HP Xiaomi Redmi Note 10</td>
+                <td>Rizky Ramadhan</td>
+                <td>Baterai cepat habis dan HP sering mati sendiri.</td>
+                <td><span class="badge returned">Sudah diambil</span></td>
+                <td><time datetime="2026-09-22">22 Sep 2026</time></td>
+              </tr>
+              <tr>
+                <td><a href="tiket-detail.html">SU-2026-00005</a></td>
+                <td>HP Samsung Galaxy A12</td>
+                <td>Dewi Lestari</td>
+                <td>HP jatuh, layar retak dan sentuhan tidak merespons di sebagian area.</td>
+                <td><span class="badge returned">Sudah diambil</span></td>
+                <td><time datetime="2026-09-19">19 Sep 2026</time></td>
+              </tr>
+              <tr>
+                <td><a href="tiket-detail.html">SU-2026-00004</a></td>
+                <td>Laptop Lenovo ThinkPad E14</td>
+                <td>CV Maju Jaya</td>
+                <td>Laptop sangat panas dan kipas berisik, sering melambat.</td>
+                <td><span class="badge returned">Sudah diambil</span></td>
+                <td><time datetime="2026-09-14">14 Sep 2026</time></td>
+              </tr>
+              <tr>
+                <td><a href="tiket-detail.html">SU-2026-00003</a></td>
+                <td>PC Rakitan Ryzen 5 3600 Tower</td>
+                <td>Andi Pratama</td>
+                <td>Komputer restart sendiri saat dipakai main game.</td>
+                <td><span class="badge returned">Sudah diambil</span></td>
+                <td><time datetime="2026-09-04">4 Sep 2026</time></td>
+              </tr>
+              <tr>
+                <td><a href="tiket-detail.html">SU-2026-00002</a></td>
+                <td>Laptop Asus VivoBook 14</td>
+                <td>Siti Rahma</td>
+                <td>Laptop mati total, tidak mau menyala dan tidak bisa di-charge.</td>
+                <td><span class="badge returned">Sudah diambil</span></td>
+                <td><time datetime="2026-08-30">30 Agu 2026</time></td>
+              </tr>
+              <tr>
+                <td><a href="tiket-detail.html">SU-2026-00001</a></td>
+                <td>Laptop Lenovo IdeaPad 3</td>
+                <td>Budi Santoso</td>
+                <td>Laptop hidup, kipas menyala, tetapi layarnya hitam. Sudah dicoba restart beberapa kali.</td>
+                <td><span class="badge returned">Sudah diambil</span></td>
+                <td><time datetime="2026-08-23">23 Agu 2026</time></td>
+              </tr>
+            </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <p>© 2026 ServisUlang AI · Proyek mata kuliah Pemrograman Web, Universitas Gunadarma</p>
+      <ul class="foot-links">
+        <li><a href="index.html">Situs publik</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

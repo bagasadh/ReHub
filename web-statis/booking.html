@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Booking Servis &amp; Buat Tiket — ServisUlang AI</title>
+  <meta name="description" content="Booking jadwal servis laptop, PC, dan HP secara mandiri. Pilih jam ketemuan dengan teknisi, amankan slot antrean dengan DP minimal Rp50.000.">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <meta name="theme-color" content="#202020">
+  <meta property="og:site_name" content="ServisUlang AI">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Booking Servis & Buat Tiket — ServisUlang AI">
+  <meta property="og:description" content="Booking jadwal servis laptop, PC, dan HP secara mandiri. Pilih jam ketemuan dengan teknisi, amankan slot antrean dengan DP minimal Rp50.000.">
+  <meta property="og:image" content="img/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="public">
+  <a class="skip" href="#utama">Lewati ke konten utama</a>
+
+  <!-- Header Publik -->
+  <header class="site-header">
+    <div class="wrap site-header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="img/logo.png" alt="" width="38" height="38">
+        <span class="brand-name">ServisUlang <span class="brand-ai">AI</span></span>
+      </a>
+      <nav aria-label="Navigasi utama">
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="booking.html" aria-current="page">Booking Servis</a></li>
+          <li><a href="portofolio.html">Portofolio</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="utama" class="wrap">
+    <!-- Judul Halaman -->
+    <header class="page-head">
+      <div>
+        <p class="kicker"><img class="icon" src="img/trofi.svg" width="18" height="18" alt=""> Layanan Mandiri Konsumen</p>
+        <h1>Booking Servis &amp; Buat Tiket</h1>
+        <p class="lead">Buat tiket servis Anda sendiri, pilih waktu konsultasi dengan teknisi, dan amankan slot penanganan tanpa perlu mengantre lama.</p>
+      </div>
+    </header>
+
+    <!-- Aturan & Kebijakan Booking (DP & Toleransi 1 Jam) -->
+    <section class="policy-box" aria-labelledby="h-aturan">
+      <h2 id="h-aturan">Ketentuan Booking &amp; Uang Muka (DP)</h2>
+      <ul class="policy-list">
+        <li>
+          <strong>Uang Muka (DP) Minimal Rp50.000:</strong> 
+          Sebagai komitmen reservasi slot waktu teknisi. DP ini <em>bukan biaya tambahan</em>, melainkan langsung memotong total tagihan servis perangkat Anda nantinya.
+        </li>
+        <li>
+          <strong>Toleransi Keterlambatan +1 Jam:</strong> 
+          Jika Anda berhalangan hadir tepat pada jam booking yang dipilih, kami memberikan batas toleransi keterlambatan maksimal <strong>1 jam</strong> dari waktu jadwal awal.
+        </li>
+        <li>
+          <strong>Kebijakan DP Hangus:</strong> 
+          Apabila Anda tidak hadir dan tidak ada konfirmasi hingga batas toleransi 1 jam berakhir, tiket booking otomatis dibatalkan dan uang DP <strong>dinyatakan hangus</strong> (tidak dapat dikembalikan).
+        </li>
+      </ul>
+    </section>
+
+    <!-- Tab Pilihan: Buat Tiket Baru vs Cek Tiket Saya (Pure CSS Tabs) -->
+    <input type="radio" name="booking_tab" id="tab-baru" class="sr-only" checked>
+    <input type="radio" name="booking_tab" id="tab-cek" class="sr-only">
+
+    <div class="booking-tabs" role="tablist" aria-label="Pilihan layanan booking">
+      <label for="tab-baru" class="booking-tab-btn" id="lbl-tab-baru" role="tab" tabindex="0">Buat Booking Baru</label>
+      <label for="tab-cek" class="booking-tab-btn" id="lbl-tab-cek" role="tab" tabindex="0">Cek Tiket Saya</label>
+    </div>
+
+    <!-- Panel 1: Formulir Booking Baru -->
+    <div id="panel-baru" class="booking-panel" role="tabpanel" aria-labelledby="lbl-tab-baru">
+      <form class="form" id="booking-form" action="#booking-receipt" method="get">
+        <p class="form-note">Kolom tanpa tulisan “(opsional)” wajib diisi.</p>
+
+        <!-- 1. Data Konsumen -->
+        <fieldset>
+          <legend>1. Data Konsumen</legend>
+          <div class="grid-2">
+            <div class="field">
+              <label for="b-nama">Nama Lengkap</label>
+              <input id="b-nama" name="nama" type="text" autocomplete="name" required placeholder="Contoh: Rian Pratama" aria-describedby="b-nama-err">
+              <p class="field-error" id="b-nama-err">Nama lengkap wajib diisi.</p>
+            </div>
+            <div class="field">
+              <label for="b-telepon">Nomor WhatsApp / HP</label>
+              <input id="b-telepon" name="telepon" type="tel" inputmode="tel" autocomplete="tel" required placeholder="Contoh: 081234567890" aria-describedby="b-tel-err b-tel-hint">
+              <p class="field-error" id="b-tel-err">Nomor WhatsApp wajib diisi untuk konfirmasi jadwal.</p>
+              <p class="hint" id="b-tel-hint">Pengingat jadwal dan kode tiket akan dikirimkan ke nomor ini.</p>
+            </div>
+            <div class="field">
+              <label for="b-email">Email <span class="opt">(opsional)</span></label>
+              <input id="b-email" name="email" type="email" autocomplete="email" placeholder="nama@email.com">
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- 2. Data Perangkat & Keluhan -->
+        <fieldset>
+          <legend>2. Perangkat &amp; Keluhan</legend>
+          <div class="grid-2">
+            <div class="field">
+              <label for="b-kategori">Kategori Perangkat</label>
+              <select id="b-kategori" name="kategori" required aria-describedby="b-kat-err">
+                <option value="">-- Pilih kategori --</option>
+                <option value="Laptop">Laptop (Asus, Lenovo, Acer, HP, MacBook, dll)</option>
+                <option value="PC">PC Komputer / Rakitan Desktop</option>
+                <option value="HP">HP / Smartphone (Android &amp; iPhone)</option>
+              </select>
+              <p class="field-error" id="b-kat-err">Pilih kategori perangkat Anda.</p>
+            </div>
+            <div class="field">
+              <label for="b-merek-model">Merek &amp; Model Perangkat</label>
+              <input id="b-merek-model" name="merek_model" type="text" required placeholder="Contoh: Lenovo ThinkPad E14 / Asus ROG / iPhone 11" aria-describedby="b-mm-err">
+              <p class="field-error" id="b-mm-err">Merek dan model perangkat wajib diisi.</p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="b-keluhan">Detail Kerusakan / Keluhan</label>
+            <textarea id="b-keluhan" name="keluhan" rows="4" required placeholder="Ceritakan kendala perangkat Anda: apa yang terjadi, sejak kapan, atau gejala kerusakan (misal: layar bergaris, laptop mati total, kipas bunyi keras)." aria-describedby="b-kel-err"></textarea>
+            <p class="field-error" id="b-kel-err">Jelaskan keluhan kerusakan perangkat Anda.</p>
+          </div>
+        </fieldset>
+
+        <!-- 3. Jadwal Janji Temu -->
+        <fieldset>
+          <legend>3. Jadwal Janji Temu di Bengkel</legend>
+          <p class="hint" style="margin-bottom: 1rem;">Bengkel buka Senin–Sabtu, pukul 09.00–18.00 WIB. Lokasi: Depok, Jawa Barat.</p>
+          <div class="grid-2">
+            <div class="field">
+              <label for="b-tanggal">Tanggal Kedatangan</label>
+              <input id="b-tanggal" name="tanggal" type="date" required aria-describedby="b-tgl-err">
+              <p class="field-error" id="b-tgl-err">Pilih tanggal booking kedatangan.</p>
+            </div>
+            <div class="field">
+              <label for="b-jam">Jam Ketemuan</label>
+              <select id="b-jam" name="jam" required aria-describedby="b-jam-err">
+                <option value="">-- Pilih jam booking --</option>
+                <option value="09:00">09:00 WIB (Pagi)</option>
+                <option value="10:00">10:00 WIB (Pagi)</option>
+                <option value="11:00">11:00 WIB (Siang)</option>
+                <option value="13:00">13:00 WIB (Siang)</option>
+                <option value="14:00">14:00 WIB (Siang)</option>
+                <option value="15:00">15:00 WIB (Sore)</option>
+                <option value="16:00">16:00 WIB (Sore)</option>
+                <option value="17:00">17:00 WIB (Sore)</option>
+              </select>
+              <p class="field-error" id="b-jam-err">Pilih jam ketemuan.</p>
+            </div>
+          </div>
+
+          <!-- Ketentuan Toleransi Kedatangan (+1 Jam) -->
+          <div class="tolerance-callout" id="preview-toleransi">
+            <span>⏱️ <strong>Ketentuan Toleransi Waktu (+1 Jam):</strong> Kami memberikan batas toleransi keterlambatan maksimal <strong>1 jam</strong> dari jam jadwal kedatangan yang Anda pilih.</span>
+            <div style="font-size: .85rem; margin-top: .25rem; color: #a0a0a0;">Contoh: Jika memilih jam 14:00 WIB, batas maksimal tiba di bengkel adalah 15:00 WIB. Lewat toleransi 1 jam tanpa konfirmasi, slot dibatalkan dan DP hangus.</div>
+          </div>
+        </fieldset>
+
+        <!-- 4. Komitmen DP & Metode Pembayaran -->
+        <fieldset>
+          <legend>4. Komitmen Uang Muka (DP)</legend>
+          <div class="field">
+            <label for="b-nominal-dp">Nominal DP (Minimal Rp50.000)</label>
+            <div class="dp-chips" role="radiogroup" aria-label="Pilihan nominal cepat">
+              <label class="dp-chip">
+                <input type="radio" name="pilihan_dp" value="50000" class="sr-only" checked>
+                <span>Rp 50.000 (Min)</span>
+              </label>
+              <label class="dp-chip">
+                <input type="radio" name="pilihan_dp" value="100000" class="sr-only">
+                <span>Rp 100.000</span>
+              </label>
+              <label class="dp-chip">
+                <input type="radio" name="pilihan_dp" value="150000" class="sr-only">
+                <span>Rp 150.000</span>
+              </label>
+              <label class="dp-chip">
+                <input type="radio" name="pilihan_dp" value="200000" class="sr-only">
+                <span>Rp 200.000</span>
+              </label>
+            </div>
+            <input id="b-nominal-dp" name="nominal_dp" type="number" min="50000" step="5000" value="50000" required aria-describedby="b-dp-err b-dp-hint">
+            <p class="field-error" id="b-dp-err">Nominal DP minimal adalah Rp50.000.</p>
+            <p class="hint" id="b-dp-hint">Nominal DP ini akan langsung menjadi pengurang total tagihan akhir servis Anda.</p>
+          </div>
+
+          <div class="field">
+            <label>Pilih Metode Pembayaran DP</label>
+            <div class="payment-methods">
+              <label class="payment-option">
+                <input type="radio" name="metode_bayar" id="pay-qris" value="QRIS" checked>
+                <span><strong>QRIS</strong> (GoPay, OVO, DANA, BCA, Semua Bank)</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="metode_bayar" id="pay-bca" value="Transfer Bank BCA">
+                <span><strong>Bank BCA</strong> (Transfer Manual)</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="metode_bayar" id="pay-mandiri" value="Transfer Bank Mandiri">
+                <span><strong>Bank Mandiri</strong> (Transfer Manual)</span>
+              </label>
+            </div>
+
+            <div class="payment-instructions" id="instruksi-qris">
+              <p><strong>Pembayaran via QRIS:</strong></p>
+              <p>Scan barcode QRIS di kasir bengkel atau transfer ke kode QR resmi ServisUlang AI saat konfirmasi WhatsApp. Berlaku instan 24 jam.</p>
+            </div>
+            <div class="payment-instructions" id="instruksi-bca">
+              <p><strong>Rekening Transfer Resmi Bank BCA:</strong></p>
+              <p>Bank BCA: <strong>873-091-2345</strong> a.n. <strong>PT ServisUlang Teknologi</strong></p>
+              <p style="font-size: .85rem; color: #a0a0a0;">Sertakan nomor tiket di berita transfer atau kirim bukti bayar ke WhatsApp admin.</p>
+            </div>
+            <div class="payment-instructions" id="instruksi-mandiri">
+              <p><strong>Rekening Transfer Resmi Bank Mandiri:</strong></p>
+              <p>Bank Mandiri: <strong>157-00-9876543-2</strong> a.n. <strong>PT ServisUlang Teknologi</strong></p>
+              <p style="font-size: .85rem; color: #a0a0a0;">Sertakan nomor tiket di berita transfer atau kirim bukti bayar ke WhatsApp admin.</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- 5. Persetujuan Syarat & Ketentuan -->
+        <div class="field-checkbox">
+          <input type="checkbox" id="b-setuju" name="setuju" required aria-describedby="b-setuju-err">
+          <label for="b-setuju">
+            <strong>Saya menyetujui ketentuan booking:</strong> 
+            Membayar DP minimal Rp50.000 sebagai jaminan slot antrean teknisi. 
+            Saya memahami diberikan <strong>toleransi keterlambatan maksimal 1 jam</strong> dari jadwal booking. 
+            Jika melewati toleransi 1 jam tanpa pemberitahuan resmi, tiket dibatalkan dan <strong>uang DP dinyatakan hangus</strong>.
+          </label>
+          <p class="field-error" id="b-setuju-err">Anda wajib mencentang persetujuan ketentuan DP dan toleransi waktu.</p>
+        </div>
+
+        <!-- Tombol Eksekusi -->
+        <p class="actions">
+          <button class="btn btn-solid" type="submit" id="btn-submit-booking">Konfirmasi &amp; Terbitkan Tiket Booking</button>
+          <a class="btn btn-link" href="index.html">Kembali ke Beranda</a>
+        </p>
+      </form>
+
+      <!-- Bukti Tiket Booking (Muncul saat URL #booking-receipt aktif via CSS :target) -->
+      <article class="booking-receipt" id="booking-receipt" aria-live="polite">
+        <div class="receipt-header">
+          <div>
+            <p class="kicker" style="margin-bottom: .25rem; color: #ffffff;"><img class="icon" src="img/trofi.svg" width="18" height="18" alt=""> Bukti Booking Terkonfirmasi</p>
+            <h2 class="receipt-title">Tiket Booking Konsumen</h2>
+          </div>
+          <div>
+            <span class="ticket-code" id="res-tiket-kode">SU-2026-BOK01</span>
+          </div>
+        </div>
+
+        <p class="proto-note">Prototipe statis: bukti tiket siap dicetak atau dikonfirmasi langsung ke WhatsApp bengkel.</p>
+
+        <dl class="facts">
+          <div><dt>Nomor Tiket</dt><dd><strong style="font-family: var(--font-mono); color: #ffffff;">SU-2026-BOK01</strong></dd></div>
+          <div><dt>Nama Pelanggan</dt><dd id="res-nama">Rian Pratama</dd></div>
+          <div><dt>Nomor Kontak / WA</dt><dd id="res-telepon">0812-3456-7890</dd></div>
+          <div><dt>Perangkat &amp; Model</dt><dd id="res-perangkat">Laptop · Asus ROG G513</dd></div>
+          <div><dt>Keluhan Utama</dt><dd id="res-keluhan">Overheat &amp; mati mendadak saat render video.</dd></div>
+          <div><dt>Jadwal Kedatangan</dt><dd id="res-jadwal" style="font-weight: 700; color: #ffffff;">Hari Ini pukul 14:00 WIB</dd></div>
+          <div><dt>Batas Toleransi Hadir (+1 Jam)</dt><dd id="res-batas-toleransi" style="font-weight: 700; color: #ffffff;">Pukul 15:00 WIB (+1 Jam Toleransi Maksimal)</dd></div>
+          <div><dt>Uang Muka (DP)</dt><dd id="res-dp" style="font-weight: 700; color: #ffffff;">Rp 50.000 (Terkonfirmasi)</dd></div>
+          <div><dt>Metode Bayar</dt><dd id="res-metode">QRIS</dd></div>
+          <div><dt>Status Tiket</dt><dd><span class="badge diagnosis">Booking / Menunggu Kedatangan</span></dd></div>
+        </dl>
+
+        <div class="receipt-warning">
+          <strong>Peringatan Kebijakan Waktu:</strong>
+          <p style="margin: .35rem 0 0; font-size: .95rem;">
+            Harap tiba di bengkel sebelum pukul <strong>15:00 WIB</strong> (batas toleransi +1 jam). Jika tidak hadir melewati batas toleransi tersebut tanpa konfirmasi, tiket hangus dan DP tidak dapat dikembalikan.
+          </p>
+        </div>
+
+        <div class="receipt-actions">
+          <a class="btn btn-solid" id="btn-wa-confirm" href="https://wa.me/6281234567890?text=Halo%20Admin%20ServisUlang%20AI%2C%20saya%20sudah%20mengisi%20form%20booking%20servis%20di%20website.%20Mohon%20konfirmasi%20jadwal%20kedatangan%20dan%20slot%20teknisi%20saya.%20Terima%20kasih!" target="_blank" rel="noopener noreferrer">Kirim Konfirmasi ke WhatsApp Bengkel</a>
+          <button class="btn btn-outline" type="button" title="Gunakan pintasan Ctrl+P / Cmd+P di browser">Cetak / Simpan Bukti (Ctrl+P)</button>
+          <a class="btn btn-link" href="booking.html" id="btn-booking-lagi">Buat Booking Lain</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Panel 2: Cek Riwayat Tiket Konsumen -->
+    <div id="panel-cek" class="booking-panel" role="tabpanel" aria-labelledby="lbl-tab-cek">
+      <section class="card" style="margin-top: 1rem;">
+        <h2>Cek Status Tiket Anda</h2>
+        <p class="muted">Masukkan nomor tiket booking (contoh: SU-2026-BOK01) atau nomor WhatsApp yang Anda gunakan saat booking.</p>
+        
+        <form class="filters" action="booking.html" method="get" role="search" style="margin-top: 1rem; padding: 0; background: transparent; border: none;">
+          <div class="field grow">
+            <label for="cek-input">Nomor Tiket atau Nomor WhatsApp</label>
+            <input id="cek-input" name="cek_q" type="text" placeholder="SU-2026-BOK... atau 0812...">
+          </div>
+          <button class="btn btn-solid" type="submit" id="btn-cari-tiket">Cari Tiket</button>
+        </form>
+
+        <div id="hasil-cek-wrapper" style="margin-top: 1.5rem;">
+          <p class="proto-note">Prototipe statis: Contoh data tiket booking yang tersimpan.</p>
+          <div id="daftar-tiket-tersimpan">
+            <article class="card" style="margin-top: 1rem; border-color: #383838; background: #242424;">
+              <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .5rem; margin-bottom: .75rem;">
+                <strong style="font-family: var(--font-mono); font-size: 1.15rem; color: #ffffff;">SU-2026-BOK01</strong>
+                <span class="badge diagnosis">Booking / Menunggu Kedatangan</span>
+              </div>
+              <p><strong>Rian Pratama</strong> · Laptop Asus ROG G513</p>
+              <p class="muted" style="margin-bottom: .5rem;">Overheat &amp; mati mendadak saat render video. Janji temu di bengkel.</p>
+              <div class="notice" style="background: #181818; padding: .75rem 1rem; border-color: #383838;">
+                <div>🕒 <strong>Jadwal:</strong> Hari Ini pukul 14:00 WIB</div>
+                <div>⏱️ <strong>Toleransi Maksimal:</strong> pukul 15:00 WIB (setelah ini DP hangus)</div>
+                <div>💰 <strong>DP:</strong> Rp 50.000 via QRIS (Terverifikasi)</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer Publik -->
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <p>© 2026 ServisUlang AI · Servis Laptop, PC, dan HP Depok</p>
+      <ul class="foot-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="booking.html">Booking Servis</a></li>
+        <li><a href="portofolio.html">Portofolio</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="dashboard.html">Area teknisi</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
+

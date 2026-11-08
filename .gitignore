@@ -1,0 +1,21 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Archives & Backups
+*.zip
+*.tar.gz
+*.rar
+
+# Node / Build Tooling (if added in the future)
+node_modules/
+dist/
+.cache/
+
+# Temporary / Scratch
+.system_generated/
+scratch/
+*.tmp
+*.log
