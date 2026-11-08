@@ -1,4 +1,4 @@
-# DESIGN.md — ServisUlang AI
+# DESIGN.md — ReHub
 
 Pedoman desain untuk website bisnis servis laptop, PC, dan HP. Dokumen ini adalah sumber kebenaran untuk keputusan visual. Setiap pilihan di sini punya alasan tertulis dan merujuk ke standar (NN/g 10 Usability Heuristics, WCAG 2.2 AA), bukan selera.
 
@@ -108,7 +108,7 @@ Aturan:
 - Panjang baris isi maksimal **66 karakter** (`max-width: 66ch`).
 - Tidak ada huruf kapital semua, tidak ada penjarangan huruf berlebihan.
 - Angka di tabel dan statistik memakai `font-variant-numeric: tabular-nums`.
-- Nomor tiket (`SU-2026-00008`), nomor seri, dan harga memakai Plex Mono.
+- Nomor tiket (`RH-2026-00008`), nomor seri, dan harga memakai Plex Mono.
 - Tidak ada teks vertikal atau berputar.
 - Teks tidak pernah di bawah 14 px, kecuali badge (13 px, tebal, kontras tinggi).
 
@@ -145,7 +145,7 @@ Aturan:
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│ [SU] ServisUlang AI              Beranda Portofolio Kontak │  header terang
+│ [SU] ReHub              Beranda Portofolio Kontak │  header terang
 ├──────────────────────────────────────────────────────────┤
 │ ┌── HERO (panel tinta) ─────────────────────────────────┐│
 │ │ H1 Bengkel servis laptop,     ┌───────────────┐       ││
@@ -173,7 +173,7 @@ Alasannya: layar pertama menjawab "apa, di mana, bagaimana menghubungi" **dan** 
 ```
 Dashboard                                   [+ Tiket baru]
 ┌ Perlu ditinjau ─────────────────────────────────────────┐   ← tindakan dulu
-│ Kemungkinan kasus berulang: SU-2026-00008 ...            │
+│ Kemungkinan kasus berulang: RH-2026-00008 ...            │
 └─────────────────────────────────────────────────────────┘
 9 total tiket · 3 aktif · 6 kasus di Repair Memory           ← baris ringkas, tanpa kartu
 [Diterima 2] [Diagnosis 1] [Menunggu 0] ... (chip tautan filter)
@@ -249,7 +249,7 @@ Berlaku untuk setiap halaman, dicek setiap fase:
 - Target sentuh ≥ 44 px (minimum mutlak WCAG 2.5.8: 24 px).
 - Fokus keyboard terlihat, 3 px, tidak tertutup elemen lain (2.4.7, 2.4.11).
 - Reflow: tanpa gulir horizontal halaman pada **320 px** (1.4.10). Tabel boleh menggulir di dalam wadahnya.
-- Nama aksesibel memuat teks yang terlihat (2.5.3). Tautan logo diberi nama "SU, ServisUlang AI, ke beranda" atau memakai wordmark lengkap.
+- Nama aksesibel memuat teks yang terlihat (2.5.3). Tautan logo diberi nama "SU, ReHub, ke beranda" atau memakai wordmark lengkap.
 - Bahasa bagian: `lang="en"` untuk teks Inggris di halaman Indonesia (3.1.2).
 - Satu `<h1>` terlihat per halaman, urutan heading tidak melompat.
 - Skip link, landmark (`header`, `nav`, `main`, `footer`), `aria-current`.
@@ -346,7 +346,7 @@ Setiap fase diakhiri dengan: axe-core 0 pelanggaran, tidak ada gulir horizontal 
 |---|---|---|
 | Nomor WhatsApp | `0812-3456-789`, tautan `https://wa.me/628123456789` | Hanya `index.html`, bagian Kontak (cari `wa.me`) |
 | Instagram | `https://www.instagram.com/` (ada komentar `TODO`) | Hanya `index.html`, bagian Kontak |
-| Alamat, jam buka | "Bengkel Contoh ServisUlang, Jl. Contoh Raya No. 1, Depok" | `index.html` (hero-meta dan bagian Kontak) |
+| Alamat, jam buka | "Bengkel Contoh ReHub, Jl. Contoh Raya No. 1, Depok" | `index.html` (hero-meta dan bagian Kontak) |
 | Foto portofolio | Gambar SVG "FOTO CONTOH" di `img/portofolio/` | `index.html`, `portofolio.html`. Ganti juga teks `alt` yang berakhiran "(foto contoh)" |
 
 Aturan nomor WhatsApp: tulis tanpa angka 0 di depan dan awali 62, misalnya `0812-3456-789` menjadi `628123456789` di tautan `wa.me`.

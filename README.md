@@ -1,4 +1,4 @@
-# ServisUlang AI — Website Bengkel & Sistem Tiket Servis
+# ReHub — Website Bengkel & Sistem Tiket Servis
 
 Website profil bisnis dan sistem booking tiket mandiri untuk bengkel servis laptop, PC, dan HP di Depok. Dibangun dengan standar web modern menggunakan **100% Pure HTML5 & CSS3** tanpa ketergantungan framework eksternal, tanpa JavaScript, dan mematuhi pedoman aksesibilitas **WCAG 2.2 Level AA**.
 

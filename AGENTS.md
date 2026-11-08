@@ -1,4 +1,4 @@
-# AI Agent Guidelines & Context Map — ServisUlang AI
+# AI Agent Guidelines & Context Map — ReHub
 
 Dokumen ini adalah panduan ringkas bagi AI Coding Agent untuk menjaga efisiensi token dan kepatuhan arsitektur proyek.
 

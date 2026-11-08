@@ -41,10 +41,9 @@ main { flex: 1; padding-block: 2rem 3.5rem; }
 .brand-name {
   display: inline-flex;
   align-items: baseline;
-  gap: .3rem;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
-.brand-ai { font-weight: 500; color: var(--ink-500); }
+.brand-sub { font-weight: 500; color: var(--ink-500); }
 
 /* Header publik (monokrom gelap) */
 .site-header {

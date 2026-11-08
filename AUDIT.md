@@ -1,6 +1,6 @@
-# Audit ServisUlang AI
+# Audit ReHub
 
-Versi yang diaudit: `servisulang-css.zip` (7 halaman HTML + `css/style.css` 812 baris).
+Versi yang diaudit: `rehub-css.zip` (7 halaman HTML + `css/style.css` 812 baris).
 Tanggal audit: 31 Okt 2026.
 
 ## Cara audit
@@ -26,7 +26,7 @@ Semua temuan Tingkat 1 dan 2 sudah dikerjakan dan diukur ulang: **axe-core 0 pel
 
 | Temuan | Status |
 |---|---|
-| 1.1 Nama tautan logo | Selesai: logo kini tautan bernama "SU ServisUlang AI" |
+| 1.1 Nama tautan logo | Selesai: logo kini tautan bernama "SU ReHub" |
 | 1.2 Reflow 320 px | Selesai: semua grid memakai batas lebar aman |
 | 1.3 Bahasa bagian | Selesai: status diterjemahkan, tagline lama dihapus bersama sidebar |
 | 1.4 Angka menimpa judul | Selesai: angka dihapus dari hero |
@@ -56,7 +56,7 @@ Masalah terbesar **bukan di accessibility, tapi di arah produk**: situs ini menc
 
 | # | Temuan | Standar | Bukti | Perbaikan |
 |---|---|---|---|---|
-| 1.1 | Tautan logo `SU` punya `aria-label="ServisUlang AI, ke beranda"` yang **tidak memuat teks yang terlihat ("SU")**. Pengguna pembaca suara dan pengguna kontrol suara ("klik SU") tidak bisa menyebut tautannya. | WCAG 2.5.3 Label in Name (A) | axe `label-content-name-mismatch`, 7 halaman, `.rail-brand` | Nama aksesibel dimulai dengan teks yang terlihat, atau logo diganti wordmark lengkap. |
+| 1.1 | Tautan logo `SU` punya `aria-label="ReHub, ke beranda"` yang **tidak memuat teks yang terlihat ("SU")**. Pengguna pembaca suara dan pengguna kontrol suara ("klik SU") tidak bisa menyebut tautannya. | WCAG 2.5.3 Label in Name (A) | axe `label-content-name-mismatch`, 7 halaman, `.rail-brand` | Nama aksesibel dimulai dengan teks yang terlihat, atau logo diganti wordmark lengkap. |
 | 1.2 | Di layar 320 px, halaman `tiket-detail` **melebar 16 px ke samping**. Penyebab: `.two-col` memakai `minmax(20rem, 1fr)`, sedangkan area isi di 320 px hanya 288 px. | WCAG 1.4.10 Reflow (AA) | Diukur: `.section.card` selesai di x=336 pada viewport 320 | `minmax(min(20rem, 100%), 1fr)`. |
 | 1.3 | Teks berbahasa Inggris di halaman `lang="id"` **tanpa `lang="en"`**: sekitar 25 badge status ("Received", "Waiting for Approval", "Returned to Customer", dll.) dan tagline "Every Repair Becomes Knowledge" di tiap halaman. Pembaca suara akan melafalkannya dengan aksen Indonesia. axe tidak memeriksa ini. | WCAG 3.1.2 Language of Parts (AA) | Pemeriksaan manual pada kode | Beri `lang="en"` pada teks tersebut, atau terjemahkan (lihat 2.4). |
 | 1.4 | Angka raksasa `01` (garis tipis, kontras 1,9:1) **menimpa judul** slide beranda. Teks judul tetap lulus kontras, tapi axe menandainya "tidak bisa ditentukan" dan secara visual judul jadi lebih sulit dibaca. | WCAG 1.4.3 (perlu tinjauan manual) | axe `incomplete` pada `#t1 > .slide-body > h2`; terlihat jelas di screenshot | Pindahkan angka ke area yang tidak berpotongan dengan teks. |
