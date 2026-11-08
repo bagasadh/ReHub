@@ -1,0 +1,12 @@
+# Robots.txt — ServisUlang AI
+# Lindungi area teknisi internal dari pengindeksan mesin pencari
+
+User-agent: *
+Disallow: /dashboard.html
+Disallow: /tiket.html
+Disallow: /tiket-baru.html
+Disallow: /tiket-detail.html
+Disallow: /riwayat.html
+Allow: /
+
+Sitemap: sitemap.xml

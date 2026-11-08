@@ -8,13 +8,13 @@
   gap: .85rem;
   margin: 1.25rem 0;
   padding: 1rem 1.25rem;
-  background: #181818;
+  background: var(--surface-sunken);
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
   transition: border-color .15s;
 }
 .field-checkbox:focus-within {
-  border-color: #ffffff;
+  border-color: var(--signal);
 }
 .field-checkbox input[type="checkbox"] {
   width: 1.3rem;
@@ -31,16 +31,16 @@
   cursor: pointer;
 }
 .field-checkbox label strong {
-  color: #ffffff;
+  color: var(--signal);
 }
 
 /* Kotak aturan booking & DP */
 .policy-box {
   margin: 1.5rem 0 2rem;
   padding: 1.25rem 1.5rem;
-  background: #181818;
+  background: var(--surface-sunken);
   border: 1px solid var(--line);
-  border-left: 6px solid #ffffff;
+  border-left: 6px solid var(--signal);
   border-radius: var(--radius-lg);
 }
 .policy-box h2 {
@@ -49,7 +49,7 @@
   display: flex;
   align-items: center;
   gap: .5rem;
-  color: #ffffff;
+  color: var(--signal);
 }
 .policy-list {
   margin: 0;
@@ -61,20 +61,20 @@
   line-height: 1.55;
 }
 .policy-list li:last-child { margin-bottom: 0; }
-.policy-list strong { color: #ffffff; }
+.policy-list strong { color: var(--signal); }
 
 /* Callout toleransi jadwal waktu */
 .tolerance-callout {
   margin: .75rem 0 0;
   padding: .75rem 1rem;
-  background: #242424;
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   font-size: .9rem;
   color: var(--ink-700);
 }
 .tolerance-callout strong {
-  color: #ffffff;
+  color: var(--signal);
 }
 
 /* Pilihan nominal DP cepat */
@@ -88,8 +88,8 @@
   padding: .4rem .9rem;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
-  background: #181818;
-  color: #ffffff;
+  background: var(--surface-sunken);
+  color: var(--signal);
   font-family: var(--font-mono);
   font-size: .9rem;
   cursor: pointer;
@@ -98,14 +98,14 @@
   align-items: center;
 }
 .dp-chip:hover {
-  background: #2d2d2d;
-  border-color: #ffffff;
+  background: var(--surface);
+  border-color: var(--signal);
 }
 .dp-chip.active,
 .dp-chip:has(input:checked) {
-  background: #ffffff;
-  color: #202020;
-  border-color: #ffffff;
+  background: var(--signal);
+  color: var(--paper);
+  border-color: var(--signal);
   font-weight: 700;
 }
 
@@ -121,26 +121,26 @@
   align-items: center;
   gap: .75rem;
   padding: .85rem 1rem;
-  background: #181818;
+  background: var(--surface-sunken);
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
   cursor: pointer;
   transition: border-color .15s, background-color .15s;
 }
 .payment-option:hover {
-  background: #222222;
-  border-color: #ffffff;
+  background: var(--surface);
+  border-color: var(--signal);
 }
 .payment-option:has(input:checked) {
-  border-color: #ffffff;
-  background: #282828;
-  box-shadow: 0 0 0 1px #ffffff;
+  border-color: var(--signal);
+  background: var(--surface);
+  box-shadow: 0 0 0 1px var(--signal);
 }
 .payment-option label {
   margin: 0;
   cursor: pointer;
   font-weight: 500;
-  color: #ffffff;
+  color: var(--signal);
 }
 
 /* Petunjuk QRIS / Rekening */
@@ -148,7 +148,7 @@
   display: none;
   margin-top: .75rem;
   padding: .85rem 1rem;
-  background: #141414;
+  background: var(--surface-sunken);
   border: 1px dashed var(--line);
   border-radius: var(--radius);
   font-size: .9rem;
@@ -156,7 +156,7 @@
 }
 .payment-instructions p { margin: 0 0 .5rem; }
 .payment-instructions p:last-child { margin: 0; }
-.payment-instructions strong { color: #ffffff; }
+.payment-instructions strong { color: var(--signal); }
 
 /* Menampilkan petunjuk bayar sesuai radio yang dipilih (pure CSS) */
 .field:has(#pay-qris:checked) #instruksi-qris,
@@ -171,7 +171,7 @@
   margin-top: 2rem;
   padding: clamp(1.25rem, 3vw, 2rem);
   background: var(--surface);
-  border: 2px solid #ffffff;
+  border: 2px solid var(--signal);
   border-radius: var(--radius-lg);
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
 }
@@ -200,24 +200,24 @@ body:has(#booking-receipt:target) #booking-form {
   font-family: var(--font-mono);
   font-size: 1.35rem;
   font-weight: 700;
-  color: #ffffff;
-  background: #141414;
+  color: var(--signal);
+  background: var(--surface-sunken);
   padding: .35rem .9rem;
   border-radius: var(--radius);
-  border: 1px solid #555555;
+  border: 1px solid var(--line-strong);
   letter-spacing: .05em;
   display: inline-block;
 }
 .receipt-warning {
   margin: 1.25rem 0;
   padding: 1rem 1.25rem;
-  background: #1a1a1a;
-  border-left: 4px solid #ffffff;
+  background: var(--surface-sunken);
+  border-left: 4px solid var(--signal);
   border-radius: var(--radius);
-  color: #f5f5f5;
+  color: var(--ink-900);
 }
 .receipt-warning strong {
-  color: #ffffff;
+  color: var(--signal);
 }
 .receipt-actions {
   display: flex;
@@ -251,17 +251,17 @@ body:has(#booking-receipt:target) #booking-form {
   user-select: none;
 }
 .booking-tab-btn:hover {
-  color: #ffffff;
+  color: var(--signal);
 }
 .booking-tab-btn.active,
 #tab-baru:checked ~ .booking-tabs #lbl-tab-baru,
 #tab-cek:checked ~ .booking-tabs #lbl-tab-cek {
-  color: #ffffff;
-  border-bottom-color: #ffffff;
+  color: var(--signal);
+  border-bottom-color: var(--signal);
 }
 #tab-baru:focus-visible ~ .booking-tabs #lbl-tab-baru,
 #tab-cek:focus-visible ~ .booking-tabs #lbl-tab-cek {
-  outline: 2px solid #ffffff;
+  outline: 2px solid var(--signal);
   outline-offset: 2px;
 }
 .booking-panel {

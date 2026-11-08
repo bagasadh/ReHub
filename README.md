@@ -86,3 +86,4 @@ Akses di browser melalui: `http://localhost:8000`
 ## 📄 Lisensi & Hak Cipta
 * Dibuat untuk pemenuhan tugas mata kuliah Pemrograman Web (Pemweb).
 * Font IBM Plex berlisensi SIL Open Font License 1.1 (`fonts/LICENSE-IBM-Plex.txt`).
+
