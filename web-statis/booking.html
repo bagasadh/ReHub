@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Booking Servis &amp; Buat Tiket — ServisUlang AI</title>
   <meta name="description" content="Booking jadwal servis laptop, PC, dan HP secara mandiri. Pilih jam ketemuan dengan teknisi, amankan slot antrean dengan DP minimal Rp50.000.">
+  <link rel="canonical" href="https://servisulang.id/booking.html">
   <link rel="icon" type="image/png" href="img/logo.png">
   <meta name="theme-color" content="#202020">
   <meta property="og:site_name" content="ServisUlang AI">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://servisulang.id/booking.html">
   <meta property="og:title" content="Booking Servis & Buat Tiket — ServisUlang AI">
   <meta property="og:description" content="Booking jadwal servis laptop, PC, dan HP secara mandiri. Pilih jam ketemuan dengan teknisi, amankan slot antrean dengan DP minimal Rp50.000.">
   <meta property="og:image" content="img/logo.png">
@@ -167,20 +169,20 @@
           <div class="field">
             <label for="b-nominal-dp">Nominal DP (Minimal Rp50.000)</label>
             <div class="dp-chips" role="radiogroup" aria-label="Pilihan nominal cepat">
-              <label class="dp-chip">
-                <input type="radio" name="pilihan_dp" value="50000" class="sr-only" checked>
+              <label class="dp-chip" for="dp-50k">
+                <input type="radio" id="dp-50k" name="pilihan_dp" value="50000" class="sr-only" checked>
                 <span>Rp 50.000 (Min)</span>
               </label>
-              <label class="dp-chip">
-                <input type="radio" name="pilihan_dp" value="100000" class="sr-only">
+              <label class="dp-chip" for="dp-100k">
+                <input type="radio" id="dp-100k" name="pilihan_dp" value="100000" class="sr-only">
                 <span>Rp 100.000</span>
               </label>
-              <label class="dp-chip">
-                <input type="radio" name="pilihan_dp" value="150000" class="sr-only">
+              <label class="dp-chip" for="dp-150k">
+                <input type="radio" id="dp-150k" name="pilihan_dp" value="150000" class="sr-only">
                 <span>Rp 150.000</span>
               </label>
-              <label class="dp-chip">
-                <input type="radio" name="pilihan_dp" value="200000" class="sr-only">
+              <label class="dp-chip" for="dp-200k">
+                <input type="radio" id="dp-200k" name="pilihan_dp" value="200000" class="sr-only">
                 <span>Rp 200.000</span>
               </label>
             </div>
@@ -190,17 +192,17 @@
           </div>
 
           <div class="field">
-            <label>Pilih Metode Pembayaran DP</label>
-            <div class="payment-methods">
-              <label class="payment-option">
+            <span class="label" id="label-metode-bayar">Pilih Metode Pembayaran DP</span>
+            <div class="payment-methods" role="radiogroup" aria-labelledby="label-metode-bayar">
+              <label class="payment-option" for="pay-qris">
                 <input type="radio" name="metode_bayar" id="pay-qris" value="QRIS" checked>
                 <span><strong>QRIS</strong> (GoPay, OVO, DANA, BCA, Semua Bank)</span>
               </label>
-              <label class="payment-option">
+              <label class="payment-option" for="pay-bca">
                 <input type="radio" name="metode_bayar" id="pay-bca" value="Transfer Bank BCA">
                 <span><strong>Bank BCA</strong> (Transfer Manual)</span>
               </label>
-              <label class="payment-option">
+              <label class="payment-option" for="pay-mandiri">
                 <input type="radio" name="metode_bayar" id="pay-mandiri" value="Transfer Bank Mandiri">
                 <span><strong>Bank Mandiri</strong> (Transfer Manual)</span>
               </label>

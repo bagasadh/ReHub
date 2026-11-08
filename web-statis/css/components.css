@@ -213,7 +213,7 @@ legend {
 }
 
 .field { margin-bottom: 1rem; }
-label { display: block; margin-bottom: .3rem; font-weight: 600; font-size: .95rem; color: var(--signal); }
+label, .label { display: block; margin-bottom: .3rem; font-weight: 600; font-size: .95rem; color: var(--signal); }
 .opt { color: var(--ink-500); font-weight: 400; }
 .hint { margin: .3rem 0 0; color: var(--ink-500); font-size: .875rem; }
 
