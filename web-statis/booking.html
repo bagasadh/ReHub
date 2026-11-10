@@ -271,6 +271,25 @@
           <div><dt>Status Tiket</dt><dd><span class="badge diagnosis">Booking / Menunggu Kedatangan</span></dd></div>
         </dl>
 
+        <!-- Section Diagnosis Mandiri AI Konsumen -->
+        <section class="card receipt-ai-box" id="customer-ai-card" style="margin: 1.25rem 0; padding: 1.25rem; background: var(--surface-sunken); border: 2px dashed var(--line-strong); border-radius: var(--radius-lg);">
+          <div class="ai-box-head">
+            <span class="tag">🤖 Asisten Mandiri AI</span>
+            <h3 style="margin: 0.5rem 0 0.25rem 0; font-size: 1.15rem;">Cari Tahu Perkiraan Kerusakan Perangkat Anda</h3>
+            <p class="muted" style="margin: 0 0 1rem 0; font-size: 0.9rem;">
+              Penasaran komponen apa yang kemungkinan bermasalah sebelum Anda datang ke bengkel? Tanyakan ke AI kami untuk mendapatkan perkiraan kerusakan awal, estimasi biaya kasar, dan hal yang perlu disiapkan.
+            </p>
+          </div>
+
+          <div id="customer-ai-result" style="display: none; margin-bottom: 1rem;">
+            <!-- Hasil analisis AI akan dirender di sini via JS -->
+          </div>
+
+          <p class="actions" style="margin: 0;">
+            <button class="btn btn-outline" type="button" id="btn-customer-ask-ai">✨ Tanyakan Diagnosis ke AI</button>
+          </p>
+        </section>
+
         <div class="receipt-warning">
           <strong>Peringatan Kebijakan Waktu:</strong>
           <p class="receipt-note">
@@ -335,6 +354,9 @@
       </ul>
     </div>
   </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/booking.js"></script>
 </body>
 </html>
 

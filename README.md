@@ -10,6 +10,12 @@ Website profil bisnis dan sistem booking tiket mandiri untuk bengkel servis lapt
 * **Aksesibilitas Teruji (WCAG 2.2 AA):** 0 pelanggaran axe-core, kontras rasio tinggi (>10:1 untuk teks utama di atas latar gelap `#202020`), struktur heading teratur, dan navigasi ramah keyboard (`:focus-visible`).
 * **Arsitektur CSS Modular:** Stylesheet dipecah secara modular berdasarkan fungsinya sehingga mudah dirawat (*maintainable*) dan efisien token saat dikembangkan bersama AI.
 * **Tipografi Self-Hosted:** Menggunakan font *IBM Plex Sans* dan *IBM Plex Mono* (OFL) yang disimpan lokal agar konsisten di semua perangkat (Android, iOS, Windows, macOS, Linux).
+* **Fitur Interaktif Vanilla JS (Minggu 3):**
+  * **Penyimpanan Lokal (localStorage):** Simulasi database lengkap untuk penerbitan tiket booking, pencarian tiket mandiri, dan integrasi data ke area teknisi.
+  * **Kalkulasi Toleransi Waktu (+1 Jam):** Menghitung batas toleransi kehadiran konsumen secara real-time saat jam booking dipilih.
+  * **Sinkronisasi DP:** Sinkronisasi dua arah antara chip nominal cepat (Rp50k, Rp100k, dll.) dan input nominal DP.
+  * **Pencarian & Filter Instan:** Live search dan filter status tiket di area teknisi tanpa reload halaman.
+  * **Simulasi Asisten AI Diagnosis:** Menganalisis kata kunci keluhan kerusakan untuk menghasilkan rekomendasi langkah uji teknisi.
 * **Fitur Interaktif Pure CSS:**
   * **Tabs Navigasi:** Menggunakan teknik *Radio Input + Label + Sibling Combinator* (`:checked ~ .booking-panel`).
   * **Metode Bayar Dinamis:** Menggunakan CSS modern selector `:has()` (`.field:has(#pay-*:checked)`).
@@ -30,7 +36,7 @@ pemwebprojek/
 │   ├── kontak.html                # Informasi workshop, alamat & jam buka
 │   ├── dashboard.html             # Area teknisi: ringkasan status bengkel
 │   ├── tiket.html                 # Area teknisi: daftar seluruh tiket
-│   ├── tiket-baru.html            # Area teknisi: form input perangkat baru
+│   ├── tiket-baru.html            # Area teknisi: info redirect reservasi konsumen mandiri
 │   ├── tiket-detail.html          # Area teknisi: diagnosis & checklist pemeriksaan
 │   ├── riwayat.html               # Area teknisi: histori servis per pelanggan
 │   ├── css/
@@ -42,6 +48,12 @@ pemwebprojek/
 │   │   ├── portofolio.css         # Card trofi & komparasi sebelum/sesudah
 │   │   ├── booking.css            # Aturan DP, tabs, kalkulasi toleransi, struk
 │   │   └── teknisi.css            # Checklist pemeriksaan, status AI, tabel data
+│   ├── js/
+│   │   ├── storage.js             # Seed data, helper CRUD localStorage & engine diagnosis AI konsumen
+│   │   ├── booking.js             # Logika booking, kalkulasi DP, struk, asisten AI konsumen, cek tiket
+│   │   ├── teknisi.js             # Statistik dashboard & live search/filter tiket
+│   │   ├── tiket-detail.js        # Detail tiket, verifikasi diagnosis AI pelanggan, checklist
+│   │   └── riwayat.js             # Linimasa histori servis perangkat/pelanggan
 │   ├── fonts/                     # Font IBM Plex (woff2 self-hosted)
 │   └── img/                       # Aset logo, ikon SVG & gambar portofolio
 ├── DESIGN.md                      # Pedoman desain, token warna, dan tipografi

@@ -64,31 +64,18 @@
         </section>
 
         <section class="section card" aria-labelledby="h-keluhan">
-          <h2 id="h-keluhan">Keluhan &amp; analisis</h2>
-          <p class="lead">“Laptop hidup tapi layar hitam lagi, kipas berputar.”</p>
-          <div class="ai-box">
-            <p class="tag">Usulan AI · belum dikonfirmasi teknisi</p>
-            <p>Analisis hanya menyusun informasi dan <em>langkah pemeriksaan</em>, bukan diagnosis. Hasil baru tersimpan setelah Anda konfirmasi.</p>
-            <div class="grid-2">
-              <div>
-                <h3>Gejala teramati</h3>
-                <ul>
-                  <li>Layar tidak menampilkan gambar (hitam)</li>
-                  <li>Perangkat menyala, kipas berputar</li>
-                  <li>Keluhan serupa pernah terjadi</li>
-                </ul>
-              </div>
-              <div>
-                <h3>Belum diketahui</h3>
-                <ul>
-                  <li>Apakah layar eksternal/monitor menampilkan gambar?</li>
-                  <li>Apakah ada bunyi beep atau lampu indikator berkedip?</li>
-                  <li>Apakah perangkat pernah jatuh atau terkena cairan?</li>
-                </ul>
-              </div>
+          <h2 id="h-keluhan">Keluhan &amp; Diagnosis Mandiri Pelanggan</h2>
+          <p class="lead" id="detail-keluhan">“Laptop hidup tapi layar hitam lagi, kipas berputar.”</p>
+          <div class="ai-box" id="tech-ai-box">
+            <p class="tag">🤖 Perkiraan AI oleh Pelanggan</p>
+            <p id="ai-status-summary">Memuat riwayat konsultasi AI pelanggan...</p>
+            <div id="ai-detail-wrap" class="grid-2">
+              <!-- Diisi secara dinamis oleh js/tiket-detail.js -->
             </div>
-            <p class="actions"><button class="btn btn-outline" type="button" disabled aria-describedby="ai-hint">Analisis dengan AI</button> <button class="btn btn-solid" type="button" disabled aria-describedby="ai-hint">Konfirmasi &amp; simpan</button></p>
-            <p class="hint" id="ai-hint">Belum aktif. Tombol ini bisa dipakai setelah mode AI dikonfigurasi.</p>
+            <p class="actions" style="margin-top: 1rem;">
+              <button class="btn btn-outline" type="button" id="btn-sync-ai-checklist">Terapkan Rekomendasi ke Catatan Checklist</button>
+            </p>
+            <p class="hint" id="ai-hint">Data di atas diajukan secara mandiri oleh pelanggan saat booking/cek tiket. Gunakan sebagai bahan perbandingan dengan hasil uji fisik di bawah.</p>
           </div>
         </section>
 
@@ -175,5 +162,8 @@
       </ul>
     </div>
   </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/tiket-detail.js"></script>
 </body>
 </html>
