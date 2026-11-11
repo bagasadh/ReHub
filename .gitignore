@@ -14,6 +14,14 @@ node_modules/
 dist/
 .cache/
 
+# Local Tooling & Graph Analysis (Local Only)
+graphify-out/
+.agents/
+.gemini/
+.graphify*
+.venv/
+venv/
+
 # Temporary / Scratch
 .system_generated/
 scratch/

@@ -8,7 +8,7 @@ Website profil bisnis dan sistem booking tiket mandiri untuk bengkel servis lapt
 
 * **100% Pure Semantic HTML5 & Modern CSS3:** Tanpa JavaScript, tanpa Node.js/npm, tanpa build step. Siap dibuka langsung di browser mana pun.
 * **Aksesibilitas Teruji (WCAG 2.2 AA):** 0 pelanggaran axe-core, kontras rasio tinggi (>10:1 untuk teks utama di atas latar gelap `#202020`), struktur heading teratur, dan navigasi ramah keyboard (`:focus-visible`).
-* **Arsitektur CSS Modular:** Stylesheet dipecah secara modular berdasarkan fungsinya sehingga mudah dirawat (*maintainable*) dan efisien token saat dikembangkan bersama AI.
+* **Arsitektur CSS Modular:** Stylesheet dipecah secara modular berdasarkan fungsinya sehingga mudah dirawat (*maintainable*) dan terstruktur rapi untuk kolaborasi pengembangan jangka panjang.
 * **Tipografi Self-Hosted:** Menggunakan font *IBM Plex Sans* dan *IBM Plex Mono* (OFL) yang disimpan lokal agar konsisten di semua perangkat (Android, iOS, Windows, macOS, Linux).
 * **Fitur Interaktif Vanilla JS (Minggu 3):**
   * **Penyimpanan Lokal (localStorage):** Simulasi database lengkap untuk penerbitan tiket booking, pencarian tiket mandiri, dan integrasi data ke area teknisi.

@@ -1,6 +1,6 @@
-# AI Agent Guidelines & Context Map — ReHub
+# Developer Guidelines & Context Map — ReHub
 
-Dokumen ini adalah panduan ringkas bagi AI Coding Agent untuk menjaga efisiensi token dan kepatuhan arsitektur proyek.
+Dokumen ini adalah panduan ringkas bagi pengembang dan kontributor untuk menjaga konsistensi arsitektur dan efisiensi struktur proyek.
 
 ---
 
@@ -24,9 +24,9 @@ Dokumen ini adalah panduan ringkas bagi AI Coding Agent untuk menjaga efisiensi 
 
 ---
 
-## 🗺️ Peta Berkas & Token Optimization Guide
+## 🗺️ Peta Berkas & Panduan Navigasi Cepat
 
-Untuk menghemat token secara maksimal, **jangan membaca seluruh file**. Selalu targetkan berkas spesifik sesuai tabel berikut:
+Untuk mempercepat proses pencarian dan pemeliharaan kode, selalu targetkan berkas spesifik sesuai tabel berikut:
 
 | Kebutuhan Pengguna / Tugas | Berkas Target | Catatan |
 |---|---|---|

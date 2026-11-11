@@ -7,7 +7,7 @@ Tanggal audit: 31 Okt 2026.
 
 - **Terukur:** axe-core 4.14 (aturan WCAG 2.0/2.1/2.2 level A dan AA + best practice) pada 7 halaman × 3 lebar layar (1280, 390, 320 px). Rasio kontras dihitung dengan rumus WCAG, bukan ditebak. Ukuran target sentuh diukur di browser.
 - **Pertimbangan ahli:** 10 Usability Heuristics Nielsen Norman Group untuk alur dan isi halaman, serta prinsip hierarki visual, tipografi, dan konsistensi.
-- **Pembanding pola template:** daftar pola "AI-generated" dari paket anti-slop yang kamu unggah, dipakai sebagai daftar periksa, bukan sebagai selera.
+- **Pembanding pola template:** daftar pola template generik dan anti-pattern web modern, dipakai sebagai daftar periksa evaluasi teknis, bukan selera subjektif.
 
 Setiap temuan diberi salah satu dari empat tingkat, supaya jelas mana yang wajib dan mana yang pilihan:
 
