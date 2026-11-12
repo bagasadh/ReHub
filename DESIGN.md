@@ -313,7 +313,7 @@ web-statis/
 | **4. Area teknisi** (selesai) | Hierarki dashboard, chip status, tanda hasil checklist, umpan balik form | Sedang | **Ya** |
 | **5. QA akhir** (selesai) | axe (0 pelanggaran), reflow 320, tes keyboard, kontras, screenshot 3 ukuran | Rendah | Tidak |
 
-Setiap fase diakhiri dengan: axe-core 0 pelanggaran, tidak ada gulir horizontal di 320 px, semua tautan valid, dan screenshot desktop + HP untuk kamu tinjau.
+Setiap fase diakhiri dengan: axe-core 0 pelanggaran, tidak ada gulir horizontal di 320 px, semua tautan valid, dan screenshot desktop dan tampilan mobile untuk proses peninjauan visual.
 
 ---
 
@@ -333,7 +333,7 @@ Setiap fase diakhiri dengan: axe-core 0 pelanggaran, tidak ada gulir horizontal 
 
 ---
 
-## 14. Catatan implementasi dan data yang harus kamu ganti
+## 14. Catatan Implementasi & Penyesuaian Data Nyata
 
 **Keputusan yang berbeda dari wireframe awal**
 - Hero beranda memakai blok pengantar di atas latar terang (judul, kalimat pendukung, tombol), lalu panel gelap "Contoh hasil servis" di bawahnya. Hasilnya lebih mudah dibaca di HP daripada dua kolom dalam satu panel.

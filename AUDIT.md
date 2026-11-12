@@ -109,7 +109,7 @@ Dipertahankan karena sudah benar atau murni selera:
 
 ## Hal yang tidak bisa diperbaiki lewat desain (kendala konten)
 
-1. **Semua foto portofolio adalah placeholder** "FOTO CONTOH". Foto sebelum/sesudah adalah elemen kepercayaan paling kuat bagi situs servis. Desain akan siap, tapi kamu perlu foto asli.
+1. **Semua foto portofolio adalah placeholder** "FOTO CONTOH". Foto sebelum/sesudah adalah elemen kepercayaan paling kuat bagi situs servis. Pada fase produksi lanjutan, aset foto dapat diganti dengan dokumentasi riil.
 2. **Tautan WhatsApp dan Instagram masih `#`**, dan alamat serta nomor telepon masih fiktif.
 3. **Alt teks foto** bertuliskan "(foto contoh)" dan harus diganti saat foto asli dipasang.
 

@@ -22,6 +22,7 @@ graphify-out/
 .graphify*
 .venv/
 venv/
+AGENTS.md
 
 # Temporary / Scratch
 .system_generated/
