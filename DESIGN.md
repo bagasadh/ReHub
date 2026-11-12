@@ -6,15 +6,11 @@ Status (31 Okt 2026): **Fase 1 sampai 5 sudah diterapkan dan diverifikasi.** Yan
 
 ---
 
-## 1. Design Read
+## 1. Konsep & Karakter Desain
 
-> Situs bisnis servis perangkat lokal (Depok) untuk pelanggan perorangan dan kantor kecil, dengan bahasa visual **"laporan teknisi"**: tinta gelap, kuning multimeter, nomor tiket bergaya mesin. Dial **ENERGY 2 / RHYTHM 2 / MOTION 1**.
+Situs bisnis servis perangkat lokal (Depok) untuk pelanggan perorangan dan kantor kecil, dengan bahasa visual **"laporan teknisi"**: tinta gelap (#202020), kartu kontras tinggi, dan nomor tiket bergaya mesin mono.
 
-| Dial | Nilai | Artinya di situs ini |
-|---|---|---|
-| ENERGY | 2 (seimbang) | Satu momen kuat (hero gelap + foto bersabuk bayangan), sisanya tenang. |
-| RHYTHM | 2 (konsisten, sedikit jeda) | Halaman publik lega dan bervariasi. Halaman teknisi padat dan seragam karena dipakai berulang. |
-| MOTION | 1 (hanya respons) | Transisi warna 150 ms dan gulir halus. Tanpa animasi masuk, tanpa putaran otomatis. |
+Karakter visual dibangun seimbang: halaman publik dirancang nyaman untuk membaca informasi dan portofolio, sedangkan area teknisi dirancang padat dan efisien untuk kebutuhan input data berulang. Transisi interaktif berjalan halus (150 ms) tanpa animasi dekoratif berlebihan demi performa dan aksesibilitas.
 
 **Siapa penggunanya**
 - *Calon pelanggan* (mahasiswa, pekerja, kantor kecil) di HP. Pertanyaan mereka: "Bisa servis ini? Dipercaya? Bagaimana menghubungi?"
@@ -178,7 +174,7 @@ Dashboard                                   [+ Tiket baru]
 9 total tiket · 3 aktif · 6 kasus di Repair Memory           ← baris ringkas, tanpa kartu
 [Diterima 2] [Diagnosis 1] [Menunggu 0] ... (chip tautan filter)
 Tiket terbaru  (tabel)
-Status sistem: Mode AI belum dikonfigurasi                   ← teks kecil, bukan "metrik"
+Status sistem: Database lokal aktif & aturan diagnosis siap       ← teks kecil, bukan "metrik"
 ```
 
 ---
@@ -203,7 +199,7 @@ Status sistem: Mode AI belum dikonfigurasi                   ← teks kecil, buk
 - **Sekunder:** garis `--ink-900`, latar transparan. Hover: latar tinta, teks putih.
 - **Tautan-tombol:** teks `--link` bergaris bawah.
 - Pada panel gelap: sekunder putih, tautan `--signal`.
-- **Nonaktif:** atribut `disabled`, latar `#E3E8EB`, teks `--ink-500`, **selalu dengan teks penjelas** ("Aktif setelah fitur AI dikonfigurasi"). Tidak ada tombol yang tampak aktif tapi tidak berfungsi. *(NN/g #1)*
+- **Nonaktif:** atribut `disabled`, latar `#E3E8EB`, teks `--ink-500`, **selalu dengan teks penjelas** ("Menunggu verifikasi fisik"). Tidak ada tombol yang tampak aktif tapi tidak berfungsi. *(NN/g #1)*
 - Nama aksi konsisten: tombol "Simpan status" menghasilkan pesan "Status disimpan".
 
 ### Navigasi
@@ -227,8 +223,8 @@ Label di atas, tinggi ≥ 44 px, garis `--line-strong`, radius 4. Fokus: cincin 
 - **Info:** latar putih, garis `--line`.
 - `role="note"` untuk statis, `role="status"` untuk pesan hasil aksi.
 
-### Kotak usulan AI
-Garis putus-putus 2 px `--ink-700` + label "Usulan AI · belum dikonfirmasi teknisi". Tetap dipertahankan: garis putus-putus berarti "belum final".
+### Kotak estimasi gejala kerusakan
+Garis putus-putus 2 px `--line-strong` + label "Estimasi Gejala Awal · oleh pelanggan". Garis putus-putus menandakan temuan awal yang perlu diverifikasi fisik oleh teknisi.
 
 ### Entri portofolio
 Dua foto berdampingan (Sebelum / Sesudah) dengan keterangan teks. Foto sesudah diberi bingkai **tinta** 3 px (bukan kuning). Di bawahnya daftar fakta (keluhan awal, temuan, tindakan, hasil uji akhir). Nomor tiket dalam Plex Mono.
@@ -351,4 +347,4 @@ Setiap fase diakhiri dengan: axe-core 0 pelanggaran, tidak ada gulir horizontal 
 
 Aturan nomor WhatsApp: tulis tanpa angka 0 di depan dan awali 62, misalnya `0812-3456-789` menjadi `628123456789` di tautan `wa.me`.
 
-**Yang belum berfungsi dan memang di luar cakupan HTML/CSS statis:** menyimpan form, memfilter tiket, tombol AI, dan login Area teknisi. Saat backend dibuat, Area teknisi wajib diproteksi autentikasi.
+**Catatan pengembangan lanjutan:** Pada fase implementasi full-stack di masa mendatang, area teknisi dapat dihubungkan dengan otentikasi login multi-level (Admin & Teknisi) dan basis data backend terpusat.

@@ -1,8 +1,8 @@
 /**
- * ReHub — Detail Tiket & Hasil Diagnosis Mandiri AI (Client-Side JS)
+ * ReHub — Detail Tiket & Hasil Estimasi Gejala Mandiri (Client-Side JS)
  * Menangani:
  * 1. Muat data tiket dinamis berdasarkan parameter URL (?id=...)
- * 2. Menampilkan hasil diagnosis AI yang diajukan oleh pelanggan
+ * 2. Menampilkan hasil estimasi gejala yang diajukan oleh pelanggan
  * 3. Pembaruan status tiket secara persisten ke localStorage
  * 4. Penyimpanan checklist pemeriksaan & catatan teknisi
  */
@@ -94,21 +94,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 2. Render Hasil Diagnosis Mandiri AI Pelanggan
+  // 2. Render Hasil Estimasi Kerusakan Mandiri Pelanggan
   // =========================================================================
-  const aiStatusSummary = document.getElementById('ai-status-summary');
-  const aiDetailWrap = document.getElementById('ai-detail-wrap');
-  const btnSyncChecklist = document.getElementById('btn-sync-ai-checklist');
-  const aiHint = document.getElementById('ai-hint');
+  const statusSummaryEl = document.getElementById('diagnosis-status-summary');
+  const detailWrapEl = document.getElementById('diagnosis-detail-wrap');
+  const btnSyncChecklist = document.getElementById('btn-sync-checklist');
 
-  function renderAiSection() {
-    if (!aiDetailWrap || !aiStatusSummary) return;
+  function renderDiagnosisSection() {
+    if (!detailWrapEl || !statusSummaryEl) return;
 
-    if (ticket.aiDiagnosis) {
-      const diag = ticket.aiDiagnosis;
-      aiStatusSummary.innerHTML = `Pelanggan telah berkonsultasi dengan asisten AI pada <strong>${diag.waktu}</strong> sebelum menyerahkan unit.`;
+    const diag = ticket.estimasiKerusakan;
 
-      aiDetailWrap.innerHTML = `
+    if (diag) {
+      statusSummaryEl.innerHTML = `Pelanggan telah melakukan pengecekan gejala mandiri pada <strong>${diag.waktu}</strong> sebelum menyerahkan unit.`;
+
+      detailWrapEl.innerHTML = `
         <div>
           <h3>Perkiraan Kerusakan yang Dilihat Pelanggan:</h3>
           <p style="margin: 0.25rem 0 0.5rem 0;">
@@ -134,14 +134,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (btnSyncChecklist) {
         btnSyncChecklist.style.display = 'inline-block';
-        btnSyncChecklist.textContent = 'Salin Temuan AI ke Catatan Pemeriksaan';
+        btnSyncChecklist.textContent = 'Salin Temuan ke Catatan Pemeriksaan';
       }
     } else {
-      aiStatusSummary.innerHTML = `<em>Pelanggan belum menjalankan diagnosis AI mandiri saat booking tiket.</em>`;
-      aiDetailWrap.innerHTML = `
+      statusSummaryEl.innerHTML = `<em>Pelanggan tidak mengisi pengecekan gejala mandiri saat booking tiket.</em>`;
+      detailWrapEl.innerHTML = `
         <div style="grid-column: 1 / -1; padding: 0.75rem; background: var(--surface); border-radius: var(--radius);">
-          <p style="margin: 0 0 0.5rem 0;">Teknisi dapat melihat perkiraan AI berdasarkan keluhan unit dengan tombol di bawah:</p>
-          <button class="btn btn-outline btn-sm" type="button" id="btn-simulate-ai-preview">Lihat Pratinjau Estimasi AI</button>
+          <p style="margin: 0 0 0.5rem 0;">Teknisi dapat melihat estimasi pola kerusakan berdasarkan keluhan unit dengan tombol di bawah:</p>
+          <button class="btn btn-outline btn-sm" type="button" id="btn-simulate-preview">Lihat Pratinjau Estimasi Gejala</button>
         </div>
       `;
 
@@ -149,27 +149,28 @@ document.addEventListener('DOMContentLoaded', () => {
         btnSyncChecklist.style.display = 'none';
       }
 
-      const btnSimulate = document.getElementById('btn-simulate-ai-preview');
+      const btnSimulate = document.getElementById('btn-simulate-preview');
       if (btnSimulate) {
         btnSimulate.addEventListener('click', () => {
-          const diag = ReHubStorage.generateCustomerDiagnosis(ticket.keluhan, ticket.kategori, ticket.perangkat);
-          ticket.aiDiagnosis = diag;
-          ReHubStorage.updateTicket(ticket.id, { aiDiagnosis: diag });
-          renderAiSection();
+          const newDiag = ReHubStorage.generateCustomerDiagnosis(ticket.keluhan, ticket.kategori, ticket.perangkat);
+          ticket.estimasiKerusakan = newDiag;
+          ReHubStorage.updateTicket(ticket.id, { estimasiKerusakan: newDiag });
+          renderDiagnosisSection();
         });
       }
     }
   }
 
-  renderAiSection();
+  renderDiagnosisSection();
 
   if (btnSyncChecklist) {
     btnSyncChecklist.addEventListener('click', () => {
-      if (!ticket.aiDiagnosis) return;
+      const currentDiag = ticket.estimasiKerusakan;
+      if (!currentDiag) return;
       const c1n = document.getElementById('c1n');
       if (c1n) {
-        c1n.value = `[AI Ref]: ${ticket.aiDiagnosis.penyebabUtama}`;
-        alert('✅ Referensi diagnosis AI pelanggan telah disalin ke baris catatan checklist!');
+        c1n.value = `[Estimasi Gejala]: ${currentDiag.penyebabUtama}`;
+        alert('✅ Referensi estimasi gejala pelanggan telah disalin ke baris catatan checklist!');
         c1n.focus();
       }
     });

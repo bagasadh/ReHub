@@ -1,7 +1,7 @@
 /**
  * ReHub — Storage Management (Client-Side Storage)
  * Modul helper untuk mengelola penyimpanan tiket di localStorage.
- * Termasuk mesin diagnosis mandiri AI untuk konsumen.
+ * Termasuk sistem analisis gejala & estimasi kerusakan mandiri untuk konsumen.
  */
 
 const REHUB_STORAGE_KEY = 'rehub_tickets_data';
@@ -32,7 +32,7 @@ const SEED_TICKETS = [
     biayaDisetujui: 'Belum diisi',
     isRepeatCase: false,
     repeatCaseId: null,
-    aiDiagnosis: {
+    estimasiKerusakan: {
       waktu: '13:45 WIB, 3 Nov 2026',
       penyebabUtama: 'Sirkulasi Termal Tersumbat & Pasta Pendingin Kering',
       detailPenyebab: [
@@ -74,7 +74,7 @@ const SEED_TICKETS = [
     biayaDisetujui: 'Rp 220.000',
     isRepeatCase: false,
     repeatCaseId: null,
-    aiDiagnosis: null
+    estimasiKerusakan: null
   },
   {
     id: 'RH-2026-00008',
@@ -101,7 +101,7 @@ const SEED_TICKETS = [
     biayaDisetujui: 'Belum diisi',
     isRepeatCase: true,
     repeatCaseId: 'RH-2026-00001',
-    aiDiagnosis: {
+    estimasiKerusakan: {
       waktu: '12:30 WIB, 17 Okt 2026',
       penyebabUtama: 'Gangguan Output Visual / Modul RAM / Fleksibel LCD',
       detailPenyebab: [
@@ -143,7 +143,7 @@ const SEED_TICKETS = [
     biayaDisetujui: 'Belum diisi',
     isRepeatCase: false,
     repeatCaseId: null,
-    aiDiagnosis: null
+    estimasiKerusakan: null
   },
   {
     id: 'RH-2026-00006',
@@ -170,7 +170,7 @@ const SEED_TICKETS = [
     biayaDisetujui: 'Rp 160.000',
     isRepeatCase: false,
     repeatCaseId: null,
-    aiDiagnosis: null
+    estimasiKerusakan: null
   },
   {
     id: 'RH-2026-00005',
@@ -197,7 +197,7 @@ const SEED_TICKETS = [
     biayaDisetujui: 'Rp 275.000',
     isRepeatCase: false,
     repeatCaseId: null,
-    aiDiagnosis: null
+    estimasiKerusakan: null
   },
   {
     id: 'RH-2026-00004',
@@ -224,7 +224,7 @@ const SEED_TICKETS = [
     biayaDisetujui: 'Rp 120.000',
     isRepeatCase: false,
     repeatCaseId: null,
-    aiDiagnosis: null
+    estimasiKerusakan: null
   },
   {
     id: 'RH-2026-00003',
@@ -251,7 +251,7 @@ const SEED_TICKETS = [
     biayaDisetujui: 'Rp 95.000',
     isRepeatCase: false,
     repeatCaseId: null,
-    aiDiagnosis: null
+    estimasiKerusakan: null
   },
   {
     id: 'RH-2026-00002',
@@ -278,7 +278,7 @@ const SEED_TICKETS = [
     biayaDisetujui: 'Rp 350.000',
     isRepeatCase: false,
     repeatCaseId: null,
-    aiDiagnosis: null
+    estimasiKerusakan: null
   },
   {
     id: 'RH-2026-00001',
@@ -305,7 +305,7 @@ const SEED_TICKETS = [
     biayaDisetujui: 'Rp 75.000',
     isRepeatCase: false,
     repeatCaseId: null,
-    aiDiagnosis: null
+    estimasiKerusakan: null
   }
 ];
 
@@ -400,7 +400,7 @@ const ReHubStorage = {
   },
 
   // =========================================================================
-  // Mesin Diagnosis AI Konsumen (Client-Side Intelligence)
+  // Sistem Analisis Gejala & Estimasi Kerusakan Otomatis (Rule-Based System)
   // =========================================================================
   generateCustomerDiagnosis(keluhan = '', kategori = '', merekModel = '') {
     const text = (keluhan + ' ' + kategori + ' ' + merekModel).toLowerCase();

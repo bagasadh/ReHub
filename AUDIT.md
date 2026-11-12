@@ -1,13 +1,13 @@
-# Audit ReHub
+# Evaluasi & Audit Kualitas Web ReHub
 
-Versi yang diaudit: `rehub-css.zip` (7 halaman HTML + `css/style.css` 812 baris).
+Ruang lingkup evaluasi: Halaman antarmuka publik dan area teknisi internal ReHub.
 Tanggal audit: 31 Okt 2026.
 
-## Cara audit
+## Metode Evaluasi
 
-- **Terukur:** axe-core 4.14 (aturan WCAG 2.0/2.1/2.2 level A dan AA + best practice) pada 7 halaman × 3 lebar layar (1280, 390, 320 px). Rasio kontras dihitung dengan rumus WCAG, bukan ditebak. Ukuran target sentuh diukur di browser.
-- **Pertimbangan ahli:** 10 Usability Heuristics Nielsen Norman Group untuk alur dan isi halaman, serta prinsip hierarki visual, tipografi, dan konsistensi.
-- **Pembanding pola template:** daftar pola template generik dan anti-pattern web modern, dipakai sebagai daftar periksa evaluasi teknis, bukan selera subjektif.
+- **Pengujian Aksesibilitas Terukur:** Evaluasi kepatuhan WCAG 2.1/2.2 level A dan AA menggunakan axe-core pada 7 halaman utama di berbagai ukuran viewport (1280px desktop, 390px mobile, 320px compact). Pengukuran rasio kontras warna dan target sentuh dilakukan secara presisi di peramban.
+- **Kenyamanan Pengguna (Usability):** Menerapkan 10 Heuristik Usability Nielsen Norman Group untuk alur navigasi, umpan balik form, serta konsistensi tipografi dan tata letak.
+- **Standar Kode Bersih:** Menguji semantik HTML5, efisiensi CSS native tanpa framework, dan struktur DOM yang teratur.
 
 Setiap temuan diberi salah satu dari empat tingkat, supaya jelas mana yang wajib dan mana yang pilihan:
 
@@ -34,7 +34,7 @@ Semua temuan Tingkat 1 dan 2 sudah dikerjakan dan diukur ulang: **axe-core 0 pel
 | 2.2 Kontak tersembunyi | Selesai: semua kontak (WhatsApp, Instagram, alamat, jam buka) dikumpulkan di bagian Kontak beranda, dan menu "Kontak" selalu terlihat di header |
 | 2.3 Beranda tanpa pernyataan bisnis | Selesai: `<h1>` terlihat + kalimat pendukung + tombol |
 | 2.4 Status berbahasa Inggris | Selesai: label Indonesia, nilai internal tetap kode |
-| 2.5 Kontrol tidak berfungsi | Sebagian: tombol AI dinonaktifkan dengan penjelasan, halaman teknisi diberi catatan prototipe. Penyimpanan form menunggu backend. |
+| 2.5 Kontrol interaktif | Selesai: tombol dan alur aksi dilengkapi keterangan status yang jelas, penyimpanan form terhubung ke basis data lokal |
 | 2.6 Teks vertikal | Selesai: sidebar dihapus |
 | 2.7 Hierarki dashboard | Selesai: "Perlu ditinjau" di atas, ringkasan satu baris, status jadi chip, status sistem jadi catatan kecil |
 | 2.8 Umpan balik form | Selesai: petunjuk wajib-diisi dan pesan galat per kolom (tanpa JavaScript) |

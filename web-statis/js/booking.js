@@ -4,7 +4,7 @@
  * 1. Restriksi tanggal & kalkulasi toleransi keterlambatan (+1 jam)
  * 2. Sinkronisasi chip DP (Rp50.000, Rp100.000, dst)
  * 3. Penerbitan tiket booking baru & penyimpanan ke localStorage
- * 4. Asisten Diagnosis Mandiri AI untuk Konsumen (pada struk & cek tiket)
+ * 4. Estimasi Kerusakan Mandiri untuk Konsumen (pada struk & cek tiket)
  * 5. Pencarian status tiket mandiri di panel 'Cek Tiket Saya'
  */
 
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         biayaDisetujui: 'Belum diisi',
         isRepeatCase: false,
         repeatCaseId: null,
-        aiDiagnosis: null // Konsumen bisa menanyakannya di struk
+        estimasiKerusakan: null // Konsumen bisa mengeceknya di struk
       };
 
       // Simpan ke localStorage
@@ -197,16 +197,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const resMetode = document.getElementById('res-metode');
       if (resMetode) resMetode.textContent = metodeBayar;
 
-      // Reset tampilan kotak AI di struk
-      const aiResultBox = document.getElementById('customer-ai-result');
-      const btnAskAi = document.getElementById('btn-customer-ask-ai');
-      if (aiResultBox) {
-        aiResultBox.style.display = 'none';
-        aiResultBox.innerHTML = '';
+      // Reset tampilan kotak estimasi di struk
+      const resultBox = document.getElementById('customer-diagnosis-result');
+      const btnDiagnose = document.getElementById('btn-customer-diagnose');
+      if (resultBox) {
+        resultBox.style.display = 'none';
+        resultBox.innerHTML = '';
       }
-      if (btnAskAi) {
-        btnAskAi.disabled = false;
-        btnAskAi.textContent = '✨ Tanyakan Diagnosis ke AI';
+      if (btnDiagnose) {
+        btnDiagnose.disabled = false;
+        btnDiagnose.textContent = '🔍 Cek Estimasi Kerusakan';
+        btnDiagnose.classList.remove('btn-solid');
+        btnDiagnose.classList.add('btn-outline');
       }
 
       // Update tautan WhatsApp dengan pesan kustom
@@ -233,12 +235,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 4. Asisten Diagnosis Mandiri AI di Sisi Konsumen (Pada Struk Booking)
+  // 4. Estimasi Kerusakan Mandiri di Sisi Konsumen (Pada Struk Booking)
   // =========================================================================
-  const btnCustomerAskAi = document.getElementById('btn-customer-ask-ai');
-  const customerAiResult = document.getElementById('customer-ai-result');
+  const btnCustomerDiagnose = document.getElementById('btn-customer-diagnose');
+  const customerDiagnosisResult = document.getElementById('customer-diagnosis-result');
 
-  function renderCustomerAiResult(container, diagnosis) {
+  function renderCustomerDiagnosisResult(container, diagnosis) {
     if (!container || !diagnosis) return;
     container.style.display = 'block';
     container.innerHTML = `
@@ -271,14 +273,14 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
 
         <div class="notice" style="margin-top: 0.75rem; font-size: 0.85rem; border-left: 3px solid var(--signal);">
-          🚀 <strong>Tersambung ke Teknisi:</strong> Hasil diagnosis mandiri Anda ini telah dicatat ke data tiket dan akan langsung terlihat oleh teknisi ReHub saat Anda tiba di bengkel!
+          📌 <strong>Tercatat di Sistem:</strong> Hasil estimasi mandiri ini telah disimpan ke data tiket dan siap dijadikan referensi teknisi saat Anda tiba di bengkel.
         </div>
       </div>
     `;
   }
 
-  if (btnCustomerAskAi) {
-    btnCustomerAskAi.addEventListener('click', () => {
+  if (btnCustomerDiagnose) {
+    btnCustomerDiagnose.addEventListener('click', () => {
       const ticketIdToDiagnose = currentReceiptTicketId || document.getElementById('res-tiket-kode')?.textContent || 'RH-2026-BOK01';
       const ticket = ReHubStorage.getTicketById(ticketIdToDiagnose);
 
@@ -287,18 +289,18 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      btnCustomerAskAi.disabled = true;
-      btnCustomerAskAi.textContent = '⏳ AI sedang menganalisis gejala perangkat Anda...';
+      btnCustomerDiagnose.disabled = true;
+      btnCustomerDiagnose.textContent = '⏳ Memeriksa pola gejala kerusakan...';
 
       setTimeout(() => {
         const diagnosis = ReHubStorage.generateCustomerDiagnosis(ticket.keluhan, ticket.kategori, ticket.perangkat);
-        ReHubStorage.updateTicket(ticket.id, { aiDiagnosis: diagnosis });
+        ReHubStorage.updateTicket(ticket.id, { estimasiKerusakan: diagnosis });
 
-        renderCustomerAiResult(customerAiResult, diagnosis);
+        renderCustomerDiagnosisResult(customerDiagnosisResult, diagnosis);
 
-        btnCustomerAskAi.textContent = 'Hasil Diagnosis AI Telah Diteruskan ke Teknisi ✔';
-        btnCustomerAskAi.classList.remove('btn-outline');
-        btnCustomerAskAi.classList.add('btn-solid');
+        btnCustomerDiagnose.textContent = 'Hasil Estimasi Telah Disimpan ke Tiket ✔';
+        btnCustomerDiagnose.classList.remove('btn-outline');
+        btnCustomerDiagnose.classList.add('btn-solid');
       }, 500);
     });
   }
@@ -337,25 +339,26 @@ document.addEventListener('DOMContentLoaded', () => {
       const badgeText = t.statusLabel || ReHubStorage.getStatusLabel(t.status);
       const isBooking = t.id.includes('BOK') || t.jam;
 
-      const aiSectionHtml = t.aiDiagnosis ? `
+      const diagData = t.estimasiKerusakan;
+      const aiSectionHtml = diagData ? `
         <div class="notice" style="margin-top: 0.75rem; border-left: 3px solid var(--signal);">
           <p style="margin: 0 0 0.35rem 0;">
-            <strong>🤖 Hasil Perkiraan AI Anda:</strong> ${t.aiDiagnosis.penyebabUtama}
+            <strong>📋 Hasil Estimasi Gejala Kerusakan:</strong> ${diagData.penyebabUtama}
           </p>
           <p style="margin: 0 0 0.35rem 0; font-size: 0.85rem;" class="muted">
-            <strong>Estimasi Biaya:</strong> ${t.aiDiagnosis.estimasiRentang} · 
-            <span class="badge ${t.aiDiagnosis.tingkatKeparahan.includes('Kritis') ? 'testing' : 'diagnosis'}">${t.aiDiagnosis.tingkatKeparahan}</span>
+            <strong>Estimasi Biaya:</strong> ${diagData.estimasiRentang} · 
+            <span class="badge ${diagData.tingkatKeparahan.includes('Kritis') ? 'testing' : 'diagnosis'}">${diagData.tingkatKeparahan}</span>
           </p>
           <details style="margin-top: 0.5rem; font-size: 0.85rem;">
-            <summary style="cursor: pointer; color: var(--link);">Lihat saran penanganan mandiri</summary>
+            <summary style="cursor: pointer; color: var(--link);">Lihat saran persiapan mandiri</summary>
             <ul style="margin: 0.35rem 0 0 1.25rem; padding: 0;">
-              ${t.aiDiagnosis.saranKonsumen.map(s => `<li>${s}</li>`).join('')}
+              ${diagData.saranKonsumen.map(s => `<li>${s}</li>`).join('')}
             </ul>
           </details>
         </div>
       ` : `
         <div style="margin-top: 0.75rem;">
-          <button class="btn btn-outline btn-sm btn-ask-ai-item" data-id="${t.id}">✨ Tanya Diagnosis AI untuk Tiket Ini</button>
+          <button class="btn btn-outline btn-sm btn-diagnose-item" data-id="${t.id}">🔍 Cek Estimasi Kerusakan</button>
         </div>
       `;
 
@@ -378,8 +381,8 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     }).join('');
 
-    // Listener untuk tombol Tanya AI dari kartu tiket
-    containerHasilCek.querySelectorAll('.btn-ask-ai-item').forEach(btn => {
+    // Listener untuk tombol cek estimasi kerusakan dari kartu tiket
+    containerHasilCek.querySelectorAll('.btn-diagnose-item').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const tId = e.target.getAttribute('data-id');
         const targetTicket = ReHubStorage.getTicketById(tId);
@@ -390,7 +393,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(() => {
           const diag = ReHubStorage.generateCustomerDiagnosis(targetTicket.keluhan, targetTicket.kategori, targetTicket.perangkat);
-          ReHubStorage.updateTicket(tId, { aiDiagnosis: diag });
+          ReHubStorage.updateTicket(tId, { estimasiKerusakan: diag });
           renderHasilCariTiket(inputCek ? inputCek.value.trim() : '');
         }, 500);
       });
