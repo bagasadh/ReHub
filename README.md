@@ -1,4 +1,4 @@
-# ReHub — Website Bengkel & Sistem Reservasi Servis
+# ReHub - Website Bengkel & Sistem Reservasi Servis
 
 Website profil bisnis dan sistem reservasi tiket servis mandiri untuk bengkel spesialis perbaikan laptop, PC, dan smartphone di Depok. Proyek ini dikembangkan sebagai pemenuhan tugas praktikum mata kuliah Pemrograman Web dengan fokus pada semantik HTML5, arsitektur CSS modular, aksesibilitas (WCAG 2.2 AA), dan interaktivitas client-side menggunakan Vanilla JavaScript.
 
