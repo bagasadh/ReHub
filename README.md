@@ -1,53 +1,26 @@
-# ReHub - Website Bengkel & Sistem Reservasi Servis
+# ReHub — Website Bengkel & Reservasi Servis
 
-Website profil bisnis dan sistem reservasi tiket servis mandiri untuk bengkel spesialis perbaikan laptop, PC, dan smartphone di Depok. Proyek ini dikembangkan sebagai pemenuhan tugas praktikum mata kuliah Pemrograman Web dengan fokus pada semantik HTML5, arsitektur CSS modular, aksesibilitas (WCAG 2.2 AA), dan interaktivitas client-side menggunakan Vanilla JavaScript.
+Website profil bengkel dan reservasi servis mandiri untuk perbaikan laptop, PC, dan smartphone di Depok. Dibuat untuk tugas praktikum Pemrograman Web dengan HTML5 semantik, CSS modular tanpa framework, dan Vanilla JavaScript.
 
----
+## Fitur
 
-## Fitur Utama
+### Antarmuka Publik (Pelanggan)
+- Beranda dan galeri portofolio perbandingan sebelum dan sesudah perbaikan.
+- Formulir reservasi (`booking.html`): pilih jadwal servis dengan batas toleransi kedatangan (+1 jam), pilih nominal DP lewat tombol cepat atau input manual, cetak struk tiket langsung, dan kirim detail reservasi ke WhatsApp admin.
+- Cek gejala kerusakan: bantu perkirakan komponen bermasalah, rentang biaya, dan persiapan sebelum unit dibawa ke bengkel.
+- Lacak status tiket menggunakan nomor tiket atau nomor WhatsApp.
 
-### 1. Antarmuka Publik (Konsumen)
-* **Beranda & Showcase Portofolio:** Tampilan profil bengkel dilengkapi galeri komparasi dokumentasi kasus perbaikan sebelum dan sesudah (*before/after*).
-* **Formulir Reservasi Mandiri (`booking.html`):**
-  * Pemilihan jadwal servis dengan kalkulasi batas toleransi waktu kedatangan (+1 jam) secara *real-time*.
-  * Pilihan nominal Down Payment (DP) dengan sinkronisasi instan antara tombol nominal cepat dan input manual.
-  * Penerbitan bukti tiket (*receipt*) langsung setelah pengisian formulir.
-  * Tautan konfirmasi otomatis ke WhatsApp admin bengkel beserta rincian data reservasi.
-* **Sistem Analisis Gejala Kerusakan Otomatis:**
-  * Konsumen dapat memeriksa kemungkinan komponen yang bermasalah secara mandiri berdasarkan keluhan perangkat.
-  * Sistem memberikan estimasi rentang biaya perbaikan dan panduan persiapan sebelum unit dibawa ke bengkel.
-* **Cek Riwayat & Status Tiket:** Konsumen dapat melacak progres pengerjaan unit secara mandiri hanya dengan memasukkan nomor tiket atau nomor WhatsApp.
+### Area Teknisi
+- Dashboard ringkasan jumlah tiket aktif dan tiket yang perlu ditinjau.
+- Daftar tiket dengan live search dan filter status (Diterima, Diagnosis, Menunggu Persetujuan, Dikerjakan, Siap Diambil, Selesai) tanpa reload.
+- Lembar inspeksi (`tiket-detail.html`): menampilkan keluhan pelanggan, checklist pemeriksaan fisik (monitor eksternal, RAM, adaptor, dan komponen lain), tombol salin gejala ke catatan inspeksi, serta pembaruan status.
+- Riwayat servis (`riwayat.html`): linimasa servis per pelanggan beserta penanda kasus perbaikan berulang.
 
-### 2. Area Operasional Bengkel (Teknisi)
-* **Dashboard Bengkel:** Ringkasan jumlah tiket aktif, tiket yang perlu ditinjau, dan metrik penanganan harian.
-* **Manajemen Tiket Servis:** Daftar tiket masuk dengan fitur *live search* dan filter status (Diterima, Diagnosis, Menunggu Persetujuan, Dikerjakan, Siap Diambil, Selesai) tanpa *reload* halaman.
-* **Lembar Inspeksi & Checklist Fisik (`tiket-detail.html`):**
-  * Menampilkan keluhan pelanggan serta catatan estimasi awal yang diajukan oleh konsumen.
-  * Form checklist bertahap (uji monitor eksternal, RAM, adaptor, dll.) dengan status kelulusan dan catatan teknisi.
-  * Fitur salin temuan gejala langsung ke catatan inspeksi.
-  * Pembaruan status pengerjaan yang tersimpan persisten.
-* **Histori Servis Pelanggan (`riwayat.html`):** Linimasa rekam jejak servis perangkat per pelanggan beserta deteksi potensi kasus perbaikan berulang.
-
----
-
-## Fondasi & Standar Teknis
-
-1. **HTML5 Semantik & Aksesibilitas (WCAG 2.2 AA):**
-   * Menggunakan elemen semantik (`<header>`, `<main>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<figure>`).
-   * Kontras warna teks memenuhi rasio minimal 4.5:1 untuk teks normal dan 3:1 untuk elemen interaktif.
-   * Setiap form kontrol dilengkapi dengan `<label>` eksplisit dan indikator `:focus-visible` untuk navigasi keyboard.
-   * Dilengkapi *skip navigation link* untuk kenyamanan pengguna pembaca layar (*screen reader*).
-2. **Arsitektur CSS Modular:**
-   * Ditulis secara *native* tanpa framework (Tailwind/Bootstrap) untuk memahami fondasi layout web modern secara mendalam.
-   * Menggunakan Design Tokens berbasis CSS Custom Properties (`:root`) untuk menjaga konsistensi warna, tipografi, dan radius.
-   * Struktur modular: `base.css` (reset & variabel), `layout.css` (grid & header/footer), `components.css` (tombol, badge, form), dan stylesheet khusus per halaman.
-3. **Penyimpanan Lokal (Web Storage API):**
-   * Seluruh interaksi data tiket, status, dan riwayat disimpan secara persisten di sisi klien menggunakan `localStorage`.
-   * Dilengkapi mekanisme *seeding* otomatis saat aplikasi pertama kali dibuka.
-4. **Tipografi Self-Hosted:**
-   * Menggunakan *IBM Plex Sans* dan *IBM Plex Mono* (OFL) yang disimpan secara lokal di folder `fonts/` guna memastikan performa dan keterbacaan yang seragam di berbagai sistem operasi.
-
----
+## Teknis
+- **HTML5 & Aksesibilitas (WCAG 2.2 AA):** memakai tag semantik (`<header>`, `<main>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<figure>`), skip link, label eksplisit pada form, dan indikator `:focus-visible`.
+- **CSS Modular:** ditulis native tanpa Tailwind atau Bootstrap, memakai variabel `:root` di `base.css` serta pemisahan `layout.css`, `components.css`, dan CSS per halaman.
+- **Penyimpanan:** data tiket dan riwayat disimpan di `localStorage` dengan data awal otomatis saat pertama kali dibuka.
+- **Font lokal:** memakai *IBM Plex Sans* dan *IBM Plex Mono* (OFL) dari folder `fonts/`.
 
 ## Struktur Direktori
 
@@ -86,30 +59,15 @@ ReHub/
 └── README.md                      # Dokumentasi proyek
 ```
 
----
+## Cara Menjalankan
 
-## Cara Menjalankan Proyek
-
-Proyek ini berupa web statis berbasis browser sehingga tidak memerlukan kompilasi atau dependensi eksternal:
-
-### Cara 1: Langsung di Browser
-Buka berkas `web-statis/index.html` langsung menggunakan peramban web (Google Chrome, Mozilla Firefox, Microsoft Edge, atau Safari).
-
-### Cara 2: Local HTTP Server (Direkomendasikan)
-Menjalankan lewat web server lokal memudahkan pengujian *path* font dan modul CSS:
+Web statis ini bisa dibuka langsung di browser lewat `web-statis/index.html`, atau dijalankan dengan local HTTP server agar path font dan CSS termuat normal:
 
 ```bash
-# Menggunakan Python 3 (bawaan sistem):
 python3 -m http.server 8000 --directory web-statis
-
-# Atau menggunakan ekstensi VS Code:
-# Klik kanan 'web-statis/index.html' -> Pilih "Open with Live Server"
 ```
 
-Buka peramban dan akses alamat: `http://localhost:8000`
+Buka `http://localhost:8000` di browser (atau gunakan ekstensi Live Server di VS Code pada `web-statis/index.html`).
 
----
-
-## Catatan Pengembang & Lisensi
-* Proyek ini dikembangkan secara mandiri untuk pemenuhan tugas mata kuliah Pemrograman Web (Pemweb).
-* Font IBM Plex berlisensi SIL Open Font License 1.1 (`fonts/LICENSE-IBM-Plex.txt`).
+## Lisensi
+Font IBM Plex memakai lisensi SIL Open Font License 1.1 (`fonts/LICENSE-IBM-Plex.txt`).
