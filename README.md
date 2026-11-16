@@ -1,73 +1,73 @@
-# ReHub — Website Bengkel & Reservasi Servis
+# ReHub — Repair Shop Website & Service Booking
 
-Website profil bengkel dan reservasi servis mandiri untuk perbaikan laptop, PC, dan smartphone di Depok. Dibuat untuk tugas praktikum Pemrograman Web dengan HTML5 semantik, CSS modular tanpa framework, dan Vanilla JavaScript.
+Business profile and self-service repair booking site for a laptop, PC, and smartphone repair shop in Depok. Built for a Web Programming coursework assignment using semantic HTML5, modular native CSS, and Vanilla JavaScript.
 
-## Fitur
+## Features
 
-### Antarmuka Publik (Pelanggan)
-- Beranda dan galeri portofolio perbandingan sebelum dan sesudah perbaikan.
-- Formulir reservasi (`booking.html`): pilih jadwal servis dengan batas toleransi kedatangan (+1 jam), pilih nominal DP lewat tombol cepat atau input manual, cetak struk tiket langsung, dan kirim detail reservasi ke WhatsApp admin.
-- Cek gejala kerusakan: bantu perkirakan komponen bermasalah, rentang biaya, dan persiapan sebelum unit dibawa ke bengkel.
-- Lacak status tiket menggunakan nomor tiket atau nomor WhatsApp.
+### Public Site (Customers)
+- Home page and portfolio gallery comparing devices before and after repair.
+- Service booking (`booking.html`): pick a time slot with a 1-hour arrival grace period, choose a down payment (DP) via quick buttons or custom input, generate a booking receipt, and send the reservation details to the shop's WhatsApp.
+- Symptom checker: estimates likely faulty components, repair cost range, and prep steps before bringing a device in.
+- Ticket tracker: check repair progress by entering a ticket number or WhatsApp number.
 
-### Area Teknisi
-- Dashboard ringkasan jumlah tiket aktif dan tiket yang perlu ditinjau.
-- Daftar tiket dengan live search dan filter status (Diterima, Diagnosis, Menunggu Persetujuan, Dikerjakan, Siap Diambil, Selesai) tanpa reload.
-- Lembar inspeksi (`tiket-detail.html`): menampilkan keluhan pelanggan, checklist pemeriksaan fisik (monitor eksternal, RAM, adaptor, dan komponen lain), tombol salin gejala ke catatan inspeksi, serta pembaruan status.
-- Riwayat servis (`riwayat.html`): linimasa servis per pelanggan beserta penanda kasus perbaikan berulang.
+### Technician Area
+- Dashboard summarizing active tickets and items needing review.
+- Ticket list with live search and status filters (Received, Diagnosis, Waiting for Approval, In Progress, Ready for Pickup, Completed) without page reloads.
+- Inspection sheet (`tiket-detail.html`): shows customer complaints, hardware checklist (external display, RAM, charger, etc.), a button to copy symptom notes into the inspection log, and persistent status updates.
+- Service history (`riwayat.html`): per-customer repair timeline that flags potential repeat issues.
 
-## Teknis
-- **HTML5 & Aksesibilitas (WCAG 2.2 AA):** memakai tag semantik (`<header>`, `<main>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<figure>`), skip link, label eksplisit pada form, dan indikator `:focus-visible`.
-- **CSS Modular:** ditulis native tanpa Tailwind atau Bootstrap, memakai variabel `:root` di `base.css` serta pemisahan `layout.css`, `components.css`, dan CSS per halaman.
-- **Penyimpanan:** data tiket dan riwayat disimpan di `localStorage` dengan data awal otomatis saat pertama kali dibuka.
-- **Font lokal:** memakai *IBM Plex Sans* dan *IBM Plex Mono* (OFL) dari folder `fonts/`.
+## Technical Notes
+- **HTML5 & Accessibility (WCAG 2.2 AA):** uses semantic landmarks (`<header>`, `<main>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<figure>`), skip links, explicit form labels, and `:focus-visible` outlines.
+- **Modular CSS:** written without frameworks like Tailwind or Bootstrap, using `:root` custom properties in `base.css` alongside `layout.css`, `components.css`, and page-specific stylesheets.
+- **Storage:** tickets and history persist in `localStorage`, seeded with sample data on first load.
+- **Fonts:** self-hosted *IBM Plex Sans* and *IBM Plex Mono* (OFL) in `fonts/`.
 
-## Struktur Direktori
+## Directory Structure
 
 ```text
 ReHub/
-├── web-statis/                    # Berkas aplikasi web
-│   ├── index.html                 # Halaman beranda & showcase
-│   ├── booking.html               # Formulir reservasi & cek status tiket
-│   ├── portofolio.html            # Galeri dokumentasi hasil servis
-│   ├── kontak.html                # Informasi bengkel, jam buka & lokasi
-│   ├── dashboard.html             # Area teknisi: ringkasan status bengkel
-│   ├── tiket.html                 # Area teknisi: daftar dan pencarian tiket
-│   ├── tiket-baru.html            # Area teknisi: informasi SOP reservasi mandiri
-│   ├── tiket-detail.html          # Area teknisi: checklist inspeksi & update status
-│   ├── riwayat.html               # Area teknisi: linimasa histori unit pelanggan
+├── web-statis/                    # Web app files
+│   ├── index.html                 # Home & portfolio preview
+│   ├── booking.html               # Booking form & ticket tracker
+│   ├── portofolio.html            # Before/after repair gallery
+│   ├── kontak.html                # Shop info, hours & location
+│   ├── dashboard.html             # Technician: shop status summary
+│   ├── tiket.html                 # Technician: ticket list & search
+│   ├── tiket-baru.html            # Technician: self-booking SOP
+│   ├── tiket-detail.html          # Technician: inspection checklist & status updates
+│   ├── riwayat.html               # Technician: customer repair timeline
 │   ├── css/
-│   │   ├── style.css              # Master stylesheet (impor seluruh modul CSS)
-│   │   ├── base.css               # Reset, @font-face, variabel warna & tema
-│   │   ├── layout.css             # Kerangka tata letak, navigasi, grid & footer
-│   │   ├── components.css         # Tombol, badge status, kartu & form fields
-│   │   ├── beranda.css            # Layout hero & slider portofolio
-│   │   ├── portofolio.css         # Grid perbandingan sebelum/sesudah perbaikan
-│   │   ├── booking.css            # Tab antarmuka, aturan DP & struk reservasi
-│   │   └── teknisi.css            # Tabel tiket, checklist & kotak diagnosis
+│   │   ├── style.css              # Master stylesheet
+│   │   ├── base.css               # Reset, @font-face, color & theme variables
+│   │   ├── layout.css             # Page layout, navigation, grid & footer
+│   │   ├── components.css         # Buttons, status badges, cards & form fields
+│   │   ├── beranda.css            # Hero & portfolio slider layout
+│   │   ├── portofolio.css         # Before/after comparison grid
+│   │   ├── booking.css            # Booking tabs, DP rules & receipt
+│   │   └── teknisi.css            # Ticket table, checklist & diagnosis box
 │   ├── js/
-│   │   ├── storage.js             # Seed data, fungsi CRUD localStorage & logika analisis gejala
-│   │   ├── booking.js             # Logika booking, kalkulasi toleransi, DP & cek tiket
-│   │   ├── teknisi.js             # Statistik dashboard & live search/filter tiket
-│   │   ├── tiket-detail.js        # Logika checklist teknisi & update status unit
-│   │   └── riwayat.js             # Tampilan linimasa histori perbaikan
-│   ├── fonts/                     # Font IBM Plex Sans & IBM Plex Mono (woff2)
-│   └── img/                       # Aset visual, logo & SVG dokumentasi portofolio
-├── DESIGN.md                      # Pedoman desain, token warna & tipografi
-├── AUDIT.md                       # Laporan evaluasi aksesibilitas & usability
-├── .gitignore                     # Aturan pengabaian berkas lingkungan lokal
-└── README.md                      # Dokumentasi proyek
+│   │   ├── storage.js             # Seed data, localStorage CRUD & symptom logic
+│   │   ├── booking.js             # Booking flow, grace period, DP & ticket lookup
+│   │   ├── teknisi.js             # Dashboard stats & live search/filter
+│   │   ├── tiket-detail.js        # Inspection checklist & status updates
+│   │   └── riwayat.js             # Repair history timeline
+│   ├── fonts/                     # IBM Plex Sans & IBM Plex Mono (woff2)
+│   └── img/                       # Visual assets, logo & portfolio SVGs
+├── DESIGN.md                      # Design tokens, colors & typography guide
+├── AUDIT.md                       # Accessibility & usability audit report
+├── .gitignore
+└── README.md
 ```
 
-## Cara Menjalankan
+## Running Locally
 
-Web statis ini bisa dibuka langsung di browser lewat `web-statis/index.html`, atau dijalankan dengan local HTTP server agar path font dan CSS termuat normal:
+Open `web-statis/index.html` directly in a browser, or serve it over a local HTTP server so font paths and CSS modules load cleanly:
 
 ```bash
 python3 -m http.server 8000 --directory web-statis
 ```
 
-Buka `http://localhost:8000` di browser (atau gunakan ekstensi Live Server di VS Code pada `web-statis/index.html`).
+Then open `http://localhost:8000` (or use VS Code's Live Server extension on `web-statis/index.html`).
 
-## Lisensi
-Font IBM Plex memakai lisensi SIL Open Font License 1.1 (`fonts/LICENSE-IBM-Plex.txt`).
+## License
+IBM Plex fonts are licensed under the SIL Open Font License 1.1 (`fonts/LICENSE-IBM-Plex.txt`).
